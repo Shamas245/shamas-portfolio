@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shamas Liaqat - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .smooth-scroll { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 smooth-scroll">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-gray-800 shadow-lg z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-blue-400">Shamas Liaqat</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#home" class="text-gray-300 hover:text-blue-400">Home</a>
+                    <a href="#projects" class="text-gray-300 hover:text-blue-400">Projects</a>
+                    <a href="#about" class="text-gray-300 hover:text-blue-400">About</a>
+                    <a href="#contact" class="text-gray-300 hover:text-blue-400">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-800 to-gray-900">
+        <div class="text-center max-w-3xl mx-auto px-4">
+            <h1 class="text-4xl sm:text-6xl font-bold text-white mb-4">Shamas Liaqat</h1>
+            <p class="text-xl text-gray-300 mb-6">Python AI Agent Developer | Chatbots & RAG | Stanford Section Leader</p>
+            <a href="#projects" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Explore My Work</a>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-white mb-12">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Book-RAG-Chatbot -->
+                <div class="bg-gray-700 rounded-lg shadow-lg p-6 hover:shadow-xl transition transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold text-blue-400">Book-RAG-Chatbot</h3>
+                    <p class="text-gray-300 mt-2">A Streamlit-based Q&A system for PDF books, using RAG for context-aware answers.</p>
+                    <p class="text-gray-400 mt-2 text-sm">Tech: Python, Streamlit, PyMuPDF, NLTK, Gemini Vision, FAISS, LangChain</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="https://github.com/Shamas245/book-rag-chatbot" class="text-blue-400 hover:underline">GitHub</a>
+                        <a href="https://your-streamlit-app-url" class="text-blue-400 hover:underline">Live Demo</a>
+                    </div>
+                </div>
+                <!-- DeepAgro -->
+                <div class="bg-gray-700 rounded-lg shadow-lg p-6 hover:shadow-xl transition transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold text-blue-400">DeepAgro</h3>
+                    <p class="text-gray-300 mt-2">Multi-agent AI system for tailored agricultural recommendations using real-time data.</p>
+                    <p class="text-gray-400 mt-2 text-sm">Tech: Python, CAMEL AI, Google Generative AI</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="https://github.com/Shamas245/DeepAgro" class="text-blue-400 hover:underline">GitHub</a>
+                    </div>
+                </div>
+                <!-- Debate-Coach -->
+                <div class="bg-gray-700 rounded-lg shadow-lg p-6 hover:shadow-xl transition transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold text-blue-400">Debate-Coach</h3>
+                    <p class="text-gray-300 mt-2">AI-powered chatbot to assist debate preparation with scenario simulation.</p>
+                    <p class="text-gray-400 mt-2 text-sm">Tech: Python, Streamlit, Google Generative AI</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="https://github.com/Shamas245/Debate-Coach" class="text-blue-400 hover:underline">GitHub</a>
+                    </div>
+                </div>
+                <!-- SpaceCrew -->
+                <div class="bg-gray-700 rounded-lg shadow-lg p-6 hover:shadow-xl transition transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold text-blue-400">SpaceCrew</h3>
+                    <p class="text-gray-300 mt-2">AI agent system to analyze space-related queries using API data.</p>
+                    <p class="text-gray-400 mt-2 text-sm">Tech: Python, CrewAI, LangChain</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="https://github.com/Shamas245/SpaceCrew" class="text-blue-400 hover:underline">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-white mb-12">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <p class="text-gray-300 leading-relaxed">
+                        I'm Shamas, a passionate Python AI Agent Developer and Educator. I specialize in building chatbots, Retrieval-Augmented Generation (RAG) systems, and multi-agent AI workflows using tools like LangChain, CrewAI, and AutoGen. With a Master's in Agricultural Economics, I bring domain expertise to agtech solutions like DeepAgro. As a Stanford Code in Place Section Leader and economics lecturer, I blend technical skills with teaching to make AI accessible.
+                    </p>
+                    <p class="text-gray-300 mt-4">My live deployments, like the Book-RAG-Chatbot, showcase my ability to turn ideas into scalable solutions using Python, FastAPI, and vector databases (Pinecone, FAISS).</p>
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-xl font-semibold text-blue-400 mb-4">Education</h3>
+                    <p class="text-gray-300">MSc (Hons.) Agricultural Economics, University of Agriculture, Faisalabad (2021-2023)</p>
+                    <p class="text-gray-300 mt-2">BSc Agricultural and Resource Economics, University of Agriculture, Faisalabad (2017-2021)</p>
+                    <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-4">Experience</h3>
+                    <p class="text-gray-300">Stanford Code in Place, Section Leader (April 2025 - Present)</p>
+                    <p class="text-gray-300 mt-2">DoTech.Ai, Python Developer (August 2023 - Present)</p>
+                    <p class="text-gray-300 mt-2">Govt. Associate College Chawinda, Lecturer (January 2023 - Present)</p>
+                </div>
+            </div>
+        </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-white mb-12">Get in Touch</h2>
+            <div class="flex flex-col items-center">
+                <p class="text-gray-300 mb-6">Let's collaborate on your next AI solution!</p>
+                <div class="flex space-x-6 mb-6">
+                    <a href="mailto:shamasliaqat780@gmail.com" class="text-blue-400 hover:text-blue-500">Email</a>
+                    <a href="https://linkedin.com/in/shamasliaqat" class="text-blue-400 hover:text-blue-500">LinkedIn</a>
+                    <a href="https://github.com/Shamas245" class="text-blue-400 hover:text-blue-500">GitHub</a>
+                </div>
+                <p class="text-gray-400">Narowal, Punjab, Pakistan | +923025157841</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">© 2025 Shamas Liaqat. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

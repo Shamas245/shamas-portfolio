@@ -3,122 +3,607 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shamas Liaqat - Portfolio</title>
+    <title>Shamas Liaqat - AI Agent Developer & Educator</title>
+    <meta name="description" content="Portfolio of Shamas Liaqat, an expert Python AI Agent Developer specializing in chatbots, RAG systems, and multi-agent AI workflows. Stanford Section Leader and international hackathon winner.">
+    <meta name="keywords" content="AI, Python, Chatbots, RAG, LangChain, Streamlit, Google Generative AI, CrewAI, Stanford, Hackathons, Portfolio">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .smooth-scroll { scroll-behavior: smooth; }
+        .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass-effect { backdrop-filter: blur(20px); background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .floating { animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        .glow { box-shadow: 0 0 20px rgba(102, 126, 234, 0.3); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
+        .skill-bar { height: 6px; background: linear-gradient(90deg, #667eea, #764ba2); border-radius: 3px; }
+        .typing::after { content: '|'; animation: blink 1s infinite; }
+        @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+        .scroll-indicator { position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, #667eea, #764ba2); z-index: 1000; transition: width 0.3s ease; }
+        .project-tech { background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); }
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid transparent;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 4px;
+        }
+        .achievement-badge {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100 smooth-scroll">
-    <!-- Navbar -->
-    <nav class="fixed top-0 w-full bg-gray-800 shadow-lg z-10">
+<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white overflow-x-hidden">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator" id="scrollProgress"></div>
+    
+    <!-- Animated Background Elements -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div class="absolute top-3/4 right-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
+        <div class="absolute bottom-1/4 left-1/3 w-80 h-80 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-2000"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full glass-effect z-50 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
+            <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <h1 class="text-xl font-bold text-blue-400">Shamas Liaqat</h1>
+                    <h1 class="text-2xl font-bold gradient-text">Shamas Liaqat</h1>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <a href="#home" class="text-gray-300 hover:text-blue-400">Home</a>
-                    <a href="#projects" class="text-gray-300 hover:text-blue-400">Projects</a>
-                    <a href="#about" class="text-gray-300 hover:text-blue-400">About</a>
-                    <a href="#contact" class="text-gray-300 hover:text-blue-400">Contact</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-300 hover:text-white transition-colors duration-300 relative group">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300 relative group">
+                        About
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#projects" class="text-gray-300 hover:text-white transition-colors duration-300 relative group">
+                        Projects
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#achievements" class="text-gray-300 hover:text-white transition-colors duration-300 relative group">
+                        Achievements
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#experience" class="text-gray-300 hover:text-white transition-colors duration-300 relative group">
+                        Experience
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300 relative group">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
                 </div>
+                <button class="md:hidden text-white" id="mobileMenu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-800 to-gray-900">
-        <div class="text-center max-w-3xl mx-auto px-4">
-            <h1 class="text-4xl sm:text-6xl font-bold text-white mb-4">Shamas Liaqat</h1>
-            <p class="text-xl text-gray-300 mb-6">Python AI Agent Developer | Chatbots & RAG | Stanford Section Leader</p>
-            <a href="#projects" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Explore My Work</a>
+    <!-- Mobile Menu -->
+    <div class="hidden md:hidden bg-gray-800 glass-effect w-full absolute top-16 left-0 z-40" id="mobileMenuContent">
+        <div class="flex flex-col items-center py-4">
+            <a href="#home" class="text-gray-300 hover:text-white py-2">Home</a>
+            <a href="#about" class="text-gray-300 hover:text-white py-2">About</a>
+            <a href="#projects" class="text-gray-300 hover:text-white py-2">Projects</a>
+            <a href="#achievements" class="text-gray-300 hover:text-white py-2">Achievements</a>
+            <a href="#experience" class="text-gray-300 hover:text-white py-2">Experience</a>
+            <a href="#contact" class="text-gray-300 hover:text-white py-2">Contact</a>
         </div>
-    </section>
+    </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-white mb-12">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Book-RAG-Chatbot -->
-                <div class="bg-gray-700 rounded-lg shadow-lg p-6 hover:shadow-xl transition transform hover:-translate-y-1">
-                    <h3 class="text-xl font-semibold text-blue-400">Book-RAG-Chatbot</h3>
-                    <p class="text-gray-300 mt-2">A Streamlit-based Q&A system for PDF books, using RAG for context-aware answers.</p>
-                    <p class="text-gray-400 mt-2 text-sm">Tech: Python, Streamlit, PyMuPDF, NLTK, Gemini Vision, FAISS, LangChain</p>
-                    <div class="mt-4 flex space-x-4">
-                        <a href="https://github.com/Shamas245/book-rag-chatbot" class="text-blue-400 hover:underline">GitHub</a>
-                        <a href="https://rag123.streamlit.app/" class="text-blue-400 hover:underline">Live Demo</a>
-                    </div>
-                </div>
-                <!-- DeepAgro -->
-                <div class="bg-gray-700 rounded-lg shadow-lg p-6 hover:shadow-xl transition transform hover:-translate-y-1">
-                    <h3 class="text-xl font-semibold text-blue-400">DeepAgro</h3>
-                    <p class="text-gray-300 mt-2">Multi-agent AI system for tailored agricultural recommendations using real-time data.</p>
-                    <p class="text-gray-400 mt-2 text-sm">Tech: Python, CAMEL AI, Google Generative AI</p>
-                    <div class="mt-4 flex space-x-4">
-                        <a href="https://github.com/Shamas245/DeepAgro" class="text-blue-400 hover:underline">GitHub</a>
-                    </div>
-                </div>
-                <!-- Debate-Coach -->
-                <div class="bg-gray-700 rounded-lg shadow-lg p-6 hover:shadow-xl transition transform hover:-translate-y-1">
-                    <h3 class="text-xl font-semibold text-blue-400">Debate-Coach</h3>
-                    <p class="text-gray-300 mt-2">AI-powered chatbot to assist debate preparation with scenario simulation.</p>
-                    <p class="text-gray-400 mt-2 text-sm">Tech: Python, Streamlit, Google Generative AI</p>
-                    <div class="mt-4 flex space-x-4">
-                        <a href="https://github.com/Shamas245/Debate-Coach" class="text-blue-400 hover:underline">GitHub</a>
-                    </div>
-                </div>
-                <!-- SpaceCrew -->
-                <div class="bg-gray-700 rounded-lg shadow-lg p-6 hover:shadow-xl transition transform hover:-translate-y-1">
-                    <h3 class="text-xl font-semibold text-blue-400">SpaceCrew</h3>
-                    <p class="text-gray-300 mt-2">AI agent system to analyze space-related queries using API data.</p>
-                    <p class="text-gray-400 mt-2 text-sm">Tech: Python, CrewAI, LangChain</p>
-                    <div class="mt-4 flex space-x-4">
-                        <a href="https://github.com/Shamas245/SpaceCrew" class="text-blue-400 hover:underline">GitHub</a>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative pt-16">
+        <div class="text-center max-w-5xl mx-auto px-4 z-10">
+            <div class="floating mb-8">
+                <!-- Replace with your actual profile image -->
+                <div class="relative mx-auto mb-6">
+                    <img src="images/1735743565157.jpeg" alt="Shamas Liaqat Profile Picture" class="profile-image mx-auto glow"> 
+    
+                    <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-r from-green-400 to-blue-400 rounded-full flex items-center justify-center">
+                        <i class="fas fa-code text-white text-lg"></i>
                     </div>
                 </div>
             </div>
+            <h1 class="text-5xl sm:text-7xl font-bold mb-6">
+                <span class="gradient-text">Shamas Liaqat</span>
+            </h1>
+            <div class="text-xl sm:text-2xl text-gray-300 mb-4 h-16 flex items-center justify-center">
+                <span id="typingText" class="typing"></span>
+            </div>
+            <p class="text-lg text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Elite AI Agent Developer • Multi-Agent Systems Architect • Stanford Section Leader • International Hackathon Winner • Building the future with cutting-edge AI technologies
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#projects" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-full hover:shadow-2xl transition-all duration-300 hover:scale-105 glow">
+                    <i class="fas fa-rocket mr-2"></i>
+                    Explore My Work
+                </a>
+                <a href="#contact" class="inline-flex items-center px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-full hover:bg-purple-400 hover:text-white transition-all duration-300 hover:scale-105">
+                    <i class="fas fa-coffee mr-2"></i>
+                    Let's Connect
+                </a>
+                <a href="https://drive.google.com/file/d/1GuLoel5VqwOPETCn3bsP1ENmWDVlRHt6/view?usp=drive_link" class="inline-flex items-center px-8 py-4 border-2 border-blue-400 text-blue-400 font-semibold rounded-full hover:bg-blue-400 hover:text-white transition-all duration-300 hover:scale-105">
+                    <i class="fas fa-file-download mr-2"></i>
+                    Download Resume
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-2xl text-gray-400"></i>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-900">
+    <section id="about" class="py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-white mb-12">About Me</h2>
-            <div class="flex flex-col md:flex-row items-center gap-8">
-                <div class="md:w-1/2">
-                    <p class="text-gray-300 leading-relaxed">
-                        I'm Shamas, a passionate Python AI Agent Developer and Educator. I specialize in building chatbots, Retrieval-Augmented Generation (RAG) systems, and multi-agent AI workflows using tools like LangChain, CrewAI,OpenAI agent SDK and AutoGen.
-                    </p>
-                    <p class="text-gray-300 mt-4">My live deployments, like the Book-RAG-Chatbot, showcase my ability to turn ideas into scalable solutions using Python, FastAPI, and vector databases (Pinecone, FAISS).</p>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">About Me</h2>
+                <p class="text-gray-400 text-lg">Passionate AI Developer & Educator</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="glass-effect rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold mb-4 text-white">My Journey</h3>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            I’m Shamas Liaqat, a Python AI Agent Developer with a unique blend of agricultural economics expertise and cutting-edge AI development skills. My journey began with a BSc and MSc (Hons.) in Agricultural Economics from the University of Agriculture, Faisalabad, where I developed a strong foundation in data-driven problem-solving.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            As a Stanford Code in Place Section Leader and Python Developer at DoTech.Ai, I specialize in building intelligent systems like RAG-powered chatbots and multi-agent AI workflows. My projects, such as Book-RAG-Chatbot and DeepAgro, showcase my ability to create scalable, impactful solutions. I’m passionate about mentoring aspiring developers and pushing the boundaries of AI innovation.
+                        </p>
+                    </div>
+                    
+                    <div class="glass-effect rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold mb-6 text-white">Core Expertise</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300">AI Agent Development</span>
+                                    <span class="text-purple-400">98%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar w-[98%] h-2 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300">Multi-Agent Systems</span>
+                                    <span class="text-purple-400">95%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar w-[95%] h-2 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300">RAG & Vector Databases</span>
+                                    <span class="text-purple-400">92%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar w-[92%] h-2 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-300">Problem Solving & Innovation</span>
+                                    <span class="text-purple-400">96%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="skill-bar w-[96%] h-2 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="md:w-1/2">
-                    <h3 class="text-xl font-semibold text-blue-400 mb-4">Education</h3>
-                    <p class="text-gray-300">MSc (Hons.) Agricultural Economics, University of Agriculture, Faisalabad (2021-2023)</p>
-                    <p class="text-gray-300 mt-2">BSc Agricultural and Resource Economics, University of Agriculture, Faisalabad (2017-2021)</p>
-                    <h3 class="text-xl font-semibold text-blue-400 mt-6 mb-4">Experience</h3>
-                    <p class="text-gray-300">Stanford Code in Place, Section Leader (April 2025 - Present)</p>
-                    <p class="text-gray-300 mt-2">DoTech.Ai, Python Developer (August 2023 - Present)</p>
-                    <p class="text-gray-300 mt-2">Govt. Associate College Chawinda, Lecturer (January 2023 - Present)</p>
+                
+                <div class="space-y-6">
+                    <div class="glass-effect rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold mb-6 text-white flex items-center">
+                            <i class="fas fa-tools mr-3 text-purple-400"></i>
+                            Advanced Tech Stack
+                        </h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="project-tech rounded-lg p-4 text-center">
+                                <i class="fab fa-python text-3xl text-yellow-400 mb-2"></i>
+                                <p class="text-sm font-semibold">Python</p>
+                            </div>
+                            <div class="project-tech rounded-lg p-4 text-center">
+                                <i class="fas fa-brain text-3xl text-blue-400 mb-2"></i>
+                                <p class="text-sm font-semibold">OpenAI SDK</p>
+                            </div>
+                            <div class="project-tech rounded-lg p-4 text-center">
+                                <i class="fas fa-network-wired text-3xl text-green-400 mb-2"></i>
+                                <p class="text-sm font-semibold">LangGraph</p>
+                            </div>
+                            <div class="project-tech rounded-lg p-4 text-center">
+                                <i class="fas fa-users text-3xl text-purple-400 mb-2"></i>
+                                <p class="text-sm font-semibold">CrewAI</p>
+                            </div>
+                            <div class="project-tech rounded-lg p-4 text-center">
+                                <i class="fas fa-rocket text-3xl text-red-400 mb-2"></i>
+                                <p class="text-sm font-semibold">FastAPI</p>
+                            </div>
+                            <div class="project-tech rounded-lg p-4 text-center">
+                                <i class="fab fa-google text-3xl text-cyan-400 mb-2"></i>
+                                <p class="text-sm font-semibold">Google ADK</p>
+                            </div>
+                            <div class="project-tech rounded-lg p-4 text-center">
+                                <i class="fas fa-database text-3xl text-pink-400 mb-2"></i>
+                                <p class="text-sm font-semibold">FAISS</p>
+                            </div>
+                            <div class="project-tech rounded-lg p-4 text-center">
+                                <i class="fab fa-docker text-3xl text-blue-500 mb-2"></i>
+                                <p class="text-sm font-semibold">Docker</p>
+                            </div>
+                            <div class="project-tech rounded-lg p-4 text-center">
+                                <i class="fas fa-server text-3xl text-orange-400 mb-2"></i>
+                                <p class="text-sm font-semibold">MySQL</p>
+                            </div>
+                            <div class="project-tech rounded-lg p-4 text-center">
+                                <i class="fas fa-exchange-alt text-3xl text-teal-400 mb-2"></i>
+                                <p class="text-sm font-semibold">A2A Communication</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Achievements & Recognition</h2>
+                <p class="text-gray-400 text-lg">Competitive Excellence & Academic Leadership</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="achievement-badge rounded-2xl p-8 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-red-400 to-pink-400 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                            <i class="fas fa-graduation-cap text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Harvard CS50x</h3>
+                        <p class="text-gray-300 text-sm mb-4">Perfect Score Achievement</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-purple-400 mb-2">9/9</div>
+                        <p class="text-gray-400 text-sm">Problem Sets Solved</p>
+                        <p class="text-gray-300 text-xs mt-2">Demonstrated exceptional problem-solving skills in Harvard's renowned computer science course</p>
+                    </div>
+                </div>
+                <div class="achievement-badge rounded-2xl p-8 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                            <i class="fas fa-trophy text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">MIT Coding Competition</h3>
+                        <p class="text-gray-300 text-sm mb-4">Team Achievement</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-blue-400 mb-2">Top Rank</div>
+                        <p class="text-gray-400 text-sm">Renowned Position</p>
+                        <p class="text-gray-300 text-xs mt-2">Led team to distinguished ranking in prestigious MIT coding competition</p>
+                    </div>
+                </div>
+                <div class="achievement-badge rounded-2xl p-8 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-emerald-400 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                            <i class="fas fa-globe text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Global Hackathons</h3>
+                        <p class="text-gray-300 text-sm mb-4">International Participation</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-green-400 mb-2">10+</div>
+                        <p class="text-gray-400 text-sm">Hackathons Completed</p>
+                        <p class="text-gray-300 text-xs mt-2">Extensive experience in rapid prototyping and innovative solution development</p>
+                    </div>
+                </div>
+                <div class="achievement-badge rounded-2xl p-8 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                            <i class="fas fa-university text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Stanford Section Leader</h3>
+                        <p class="text-gray-300 text-sm mb-4">Educational Excellence</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-purple-400 mb-2">Elite</div>
+                        <p class="text-gray-400 text-sm">Teaching Position</p>
+                        <p class="text-gray-300 text-xs mt-2">Selected to guide students in Stanford's Code in Place program</p>
+                    </div>
+                </div>
+                <div class="achievement-badge rounded-2xl p-8 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                            <i class="fas fa-lightbulb text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">AI Innovation</h3>
+                        <p class="text-gray-300 text-sm mb-4">Technical Leadership</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-yellow-400 mb-2">Pioneer</div>
+                        <p class="text-gray-400 text-sm">AI Agent Systems</p>
+                        <p class="text-gray-300 text-xs mt-2">Developing cutting-edge multi-agent AI solutions at industry scale</p>
+                    </div>
+                </div>
+                <div class="achievement-badge rounded-2xl p-8 card-hover">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-pink-400 to-rose-400 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                            <i class="fas fa-heart text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Community Builder</h3>
+                        <p class="text-gray-300 text-sm mb-4">Educational Impact</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-pink-400 mb-2">Mentor</div>
+                        <p class="text-gray-400 text-sm">Future Developers</p>
+                        <p class="text-gray-300 text-xs mt-2">Inspiring and guiding the next generation of AI developers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Featured Projects</h2>
+                <p class="text-gray-400 text-lg">Innovative AI solutions that make a difference</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Book-RAG-Chatbot -->
+                <div class="glass-effect rounded-2xl p-8 card-hover">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-400 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-book-open text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Book-RAG-Chatbot</h3>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            A revolutionary Streamlit-based Q&A system that transforms PDF books into interactive learning experiences. Features advanced RAG architecture with context-aware responses, user authentication, conversation history, and intelligent document parsing for text and images.
+                        </p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-xs">Python</span>
+                            <span class="px-3 py-1 bg-green-900 text-green-300 rounded-full text-xs">Streamlit</span>
+                            <span class="px-3 py-1 bg-purple-900 text-purple-300 rounded-full text-xs">LangChain</span>
+                            <span class="px-3 py-1 bg-red-900 text-red-300 rounded-full text-xs">FAISS</span>
+                            <span class="px-3 py-1 bg-yellow-900 text-yellow-300 rounded-full text-xs">Gemini AI</span>
+                            <span class="px-3 py-1 bg-teal-900 text-teal-300 rounded-full text-xs">PyMuPDF</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/Shamas245/book-rag-chatbot" class="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
+                            <i class="fab fa-github mr-2"></i>
+                            Code
+                        </a>
+                        <a href="https://rag123.streamlit.app/" class="flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- DeepAgro -->
+                <div class="glass-effect rounded-2xl p-8 card-hover">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-blue-400 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-seedling text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">DeepAgro</h3>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            A cutting-edge multi-agent AI system delivering personalized agricultural recommendations. Integrates real-time environmental and economic data with advanced machine learning to optimize farming strategies. Features specialized agents for user interaction, data analysis, and planning.
+                        </p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-xs">Python</span>
+                            <span class="px-3 py-1 bg-green-900 text-green-300 rounded-full text-xs">CAMEL AI</span>
+                            <span class="px-3 py-1 bg-purple-900 text-purple-300 rounded-full text-xs">Google AI</span>
+                            <span class="px-3 py-1 bg-yellow-900 text-yellow-300 rounded-full text-xs">Multi-Agent</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/Shamas245/DeepAgro" class="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
+                            <i class="fab fa-github mr-2"></i>
+                            Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Debate-Coach -->
+                <div class="glass-effect rounded-2xl p-8 card-hover">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-comments text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Debate-Coach</h3>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            An AI-powered chatbot designed to enhance debate preparation. Built with Streamlit and Google Generative AI, it offers structured guidance, practice scenarios, and example content for Declamation, Parliamentary Debate, and Model United Nations (MUN).
+                        </p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-xs">Python</span>
+                            <span class="px-3 py-1 bg-green-900 text-green-300 rounded-full text-xs">Streamlit</span>
+                            <span class="px-3 py-1 bg-purple-900 text-purple-300 rounded-full text-xs">Google AI</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/Shamas245/Debate-Coach" class="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
+                            <i class="fab fa-github mr-2"></i>
+                            Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- SpaceCrew -->
+                <div class="glass-effect rounded-2xl p-8 card-hover">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-space-shuttle text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">SpaceCrew</h3>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            An AI-powered multi-agent system for analyzing space-related queries. Integrates NASA APIs with CrewAI and LangChain to fetch and summarize data, delivering engaging, context-aware responses.
+                        </p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-xs">Python</span>
+                            <span class="px-3 py-1 bg-green-900 text-green-300 rounded-full text-xs">CrewAI</span>
+                            <span class="px-3 py-1 bg-purple-900 text-purple-300 rounded-full text-xs">LangChain</span>
+                            <span class="px-3 py-1 bg-yellow-900 text-yellow-300 rounded-full text-xs">NASA APIs</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/Shamas245/-SpaceCrew-" class="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
+                            <i class="fab fa-github mr-2"></i>
+                            Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Course Development Platform -->
+                <div class="glass-effect rounded-2xl p-8 card-hover">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-orange-400 to-red-400 rounded-2xl flex items-center justify-center mb-4">
+                            <i class="fas fa-chalkboard-teacher text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Course Development Platform</h3>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            A platform for creating and managing educational courses with AI-driven content generation and interactive features. Built with modern AI tools to streamline course creation and delivery.
+                        </p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-xs">Python</span>
+                            <span class="px-3 py-1 bg-green-900 text-green-300 rounded-full text-xs">Streamlit</span>
+                            <span class="px-3 py-1 bg-purple-900 text-purple-300 rounded-full text-xs">Google AI</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/Shamas245/Course_Development_Platform" class="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
+                            <i class="fab fa-github mr-2"></i>
+                            Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Professional Experience</h2>
+                <p class="text-gray-400 text-lg">Driving Innovation in AI and Education</p>
+            </div>
+            
+            <div class="space-y-8">
+                <div class="glass-effect rounded-2xl p-8 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-university text-xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Stanford Code in Place</h3>
+                            <p class="text-gray-400 text-sm">Section Leader | April 2025 - Present</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Lead virtual sections for Stanford's Code in Place, teaching Python programming to a global cohort of students. Develop engaging curricula and provide personalized feedback to foster learning and growth.
+                    </p>
+                </div>
+                <div class="glass-effect rounded-2xl p-8 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-code text-xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">DoTech.Ai</h3>
+                            <p class="text-gray-400 text-sm">Python Developer | August 2023 - Present</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Design and develop advanced AI agent systems, including multi-agent architectures and RAG-based applications, using Python, FastAPI, and vector databases like FAISS and Pinecone.
+                    </p>
+                </div>
+                <div class="glass-effect rounded-2xl p-8 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-chalkboard-teacher text-xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Govt. Associate College Chawinda</h3>
+                            <p class="text-gray-400 text-sm">Lecturer | January 2023 - Present</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Teach computer science and economics, integrating AI concepts into the curriculum to prepare students for modern technological challenges.
+                    </p>
+                </div>
+                <div class="glass-effect rounded-2xl p-8 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-briefcase text-xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Freelance AI Developer</h3>
+                            <p class="text-gray-400 text-sm">2022 - Present</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Deliver custom AI solutions for clients worldwide, specializing in chatbots, automation systems, and data analysis tools using Python, LangChain, and Google Generative AI.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-800">
+    <section id="contact" class="py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-white mb-12">Get in Touch</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Get in Touch</h2>
+                <p class="text-gray-400 text-lg">Let's collaborate on your next AI project!</p>
+            </div>
             <div class="flex flex-col items-center">
-                <p class="text-gray-300 mb-6">Let's collaborate on your next AI solution!</p>
                 <div class="flex space-x-6 mb-6">
-                    <a href="mailto:shamasliaqat780@gmail.com" class="text-blue-400 hover:text-blue-500">Email</a>
-                    <a href="https://linkedin.com/in/shamasliaqat" class="text-blue-400 hover:text-blue-500">LinkedIn</a>
-                    <a href="https://github.com/Shamas245" class="text-blue-400 hover:text-blue-500">GitHub</a>
+                    <a href="mailto:shamasliaqat780@gmail.com" class="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Email
+                    </a>
+                    <a href="https://linkedin.com/in/shamasliaqat" class="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
+                        <i class="fab fa-linkedin mr-2"></i>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/Shamas245" class="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>
+                        GitHub
+                    </a>
                 </div>
-                <p class="text-gray-400">Narowal, Punjab, Pakistan | +923025157841</p>
+                <p class="text-gray-400 mb-4">Narowal, Punjab, Pakistan | +923025157841</p>
+                <a href="https://calendly.com/shamasliaqat245/30min" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-full hover:shadow-2xl transition-all duration-300 hover:scale-105 glow">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    Schedule a Call
+                </a>
             </div>
         </div>
     </section>
@@ -131,13 +616,60 @@
     </footer>
 
     <script>
-        // Smooth scrolling for nav links
+        // Typing animation
+        const texts = [
+            "Python AI Agent Developer",
+            "Multi-Agent Systems Architect",
+            "Stanford Section Leader",
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingText = document.getElementById('typingText');
+        
+        function type() {
+            const currentText = texts[textIndex];
+            if (isDeleting) {
+                typingText.textContent = currentText.substring(0, charIndex--);
+                if (charIndex < 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                }
+            } else {
+                typingText.textContent = currentText.substring(0, charIndex++);
+                if (charIndex > currentText.length) {
+                    isDeleting = true;
+                    setTimeout(type, 1000);
+                    return;
+                }
+            }
+            setTimeout(type, isDeleting ? 50 : 100);
+        }
+        type();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobileMenu');
+        const mobileMenuContent = document.getElementById('mobileMenuContent');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenuContent.classList.toggle('hidden');
+        });
+
+        // Scroll progress indicator
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.getElementById('scrollProgress').style.width = scrollPercent + '%';
+        });
+
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+                mobileMenuContent.classList.add('hidden');
             });
         });
     </script>

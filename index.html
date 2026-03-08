@@ -1,663 +1,835 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shamas Liaqat - AI Agent Developer & Educator</title>
-    <meta name="description" content="Portfolio of Shamas Liaqat, an expert Python AI Agent Developer specializing in chatbots, RAG systems, and multi-agent AI workflows. Stanford Section Leader and international hackathon winner.">
-    <meta name="keywords" content="AI, Python, Chatbots, RAG, LangChain, Streamlit, Google Generative AI, CrewAI, Stanford, Hackathons, Portfolio">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .glass-effect { backdrop-filter: blur(20px); background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); }
-        .floating { animation: float 6s ease-in-out infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-        .glow { box-shadow: 0 0 20px rgba(102, 126, 234, 0.3); }
-        .card-hover { transition: all 0.3s ease; }
-        .card-hover:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
-        .skill-bar { height: 6px; background: linear-gradient(90deg, #667eea, #764ba2); border-radius: 3px; }
-        .typing::after { content: '|'; animation: blink 1s infinite; }
-        @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
-        .scroll-indicator { position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, #667eea, #764ba2); z-index: 1000; transition: width 0.3s ease; }
-        .project-tech { background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); }
-        .profile-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid transparent;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            padding: 4px;
-        }
-        .achievement-badge {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
-            border: 1px solid rgba(102, 126, 234, 0.3);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shamas Liaqat — Applied Economist & Quantitative Researcher</title>
+<meta name="description" content="Applied Economist specializing in causal inference, agricultural economics, and data-driven policy research. PhD applicant. Open to research collaborations and remote work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:    #1a2535;
+    --teal:    #2a6b6b;
+    --teal-lt: #3d8f8f;
+    --sand:    #f5f0e8;
+    --paper:   #fdfaf5;
+    --muted:   #6b7280;
+    --border:  #e2ddd4;
+    --white:   #ffffff;
+    --text:    #1a2535;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(253,250,245,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 600;
+    color: var(--navy); text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem; font-weight: 500;
+    color: var(--muted); text-decoration: none;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+  .nav-toggle span {
+    display: block; width: 22px; height: 1.5px;
+    background: var(--navy); margin: 5px 0;
+    transition: all 0.3s;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 0; }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
+  .section-label {
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--teal);
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 600; color: var(--navy);
+    line-height: 1.2; margin-bottom: 2.5rem;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding-top: 64px;
+    background: var(--paper);
+    position: relative;
+  }
+  #hero::after {
+    content: '';
+    position: absolute; right: 0; top: 0; bottom: 0;
+    width: 38%;
+    background: var(--sand);
+    z-index: 0;
+  }
+  .hero-inner {
+    position: relative; z-index: 1;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center;
+    width: 100%; max-width: 960px;
+    margin: 0 auto; padding: 0 2rem;
+  }
+  .hero-left {}
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--teal); font-weight: 500;
+    border: 1px solid var(--teal);
+    padding: 0.3rem 0.8rem; margin-bottom: 1.5rem;
+  }
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 6vw, 4.2rem);
+    font-weight: 700; line-height: 1.05;
+    color: var(--navy); margin-bottom: 1rem;
+  }
+  .hero-title {
+    font-size: 0.95rem; color: var(--muted);
+    font-weight: 400; margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  .hero-desc {
+    font-size: 1rem; color: var(--text);
+    max-width: 460px; margin-bottom: 2.5rem;
+    line-height: 1.75;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-block; padding: 0.7rem 1.8rem;
+    background: var(--navy); color: var(--white);
+    font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--teal); }
+  .btn-secondary {
+    display: inline-block; padding: 0.7rem 1.8rem;
+    border: 1px solid var(--navy); color: var(--navy);
+    font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .btn-secondary:hover { background: var(--navy); color: var(--white); }
+
+  .hero-right {
+    display: flex; flex-direction: column; gap: 1.5rem;
+  }
+  .hero-stat-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 1.4rem 1.6rem;
+  }
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 700; color: var(--teal);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.82rem; color: var(--muted); margin-top: 0.3rem; }
+
+  /* ── ABOUT ── */
+  #about { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .about-text p { color: #374151; margin-bottom: 1.2rem; font-size: 0.97rem; }
+  .about-text p:last-child { margin-bottom: 0; }
+  .about-meta { display: flex; flex-direction: column; gap: 1.2rem; }
+  .meta-item {
+    padding: 1.2rem 1.4rem;
+    background: var(--sand);
+    border-left: 3px solid var(--teal);
+  }
+  .meta-item strong {
+    display: block; font-size: 0.8rem; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--teal); margin-bottom: 0.3rem;
+  }
+  .meta-item span { font-size: 0.92rem; color: var(--text); }
+
+  /* ── RESEARCH ── */
+  #research { background: var(--paper); }
+  .pub-card {
+    border: 1px solid var(--border);
+    padding: 2rem; background: var(--white);
+    margin-bottom: 1.5rem;
+    display: grid; grid-template-columns: auto 1fr;
+    gap: 1.5rem; align-items: start;
+  }
+  .pub-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 600;
+    color: var(--teal); min-width: 48px;
+    padding-top: 0.15rem;
+  }
+  .pub-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 600;
+    color: var(--navy); margin-bottom: 0.4rem;
+    line-height: 1.4;
+  }
+  .pub-meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.6rem; }
+  .pub-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.7rem; }
+  .tag {
+    font-size: 0.72rem; letter-spacing: 0.06em;
+    text-transform: uppercase; font-weight: 500;
+    padding: 0.25rem 0.65rem;
+    background: var(--sand); color: var(--teal);
+    border: 1px solid var(--border);
+  }
+  .tag-doi {
+    font-size: 0.72rem; letter-spacing: 0.02em;
+    padding: 0.25rem 0.65rem;
+    background: var(--navy); color: var(--white);
+    text-decoration: none; transition: background 0.2s;
+  }
+  .tag-doi:hover { background: var(--teal); }
+
+  .interests-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1px; background: var(--border);
+    margin-top: 2.5rem; border: 1px solid var(--border);
+  }
+  .interest-item {
+    background: var(--white);
+    padding: 1.5rem 1.8rem;
+  }
+  .interest-item h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; font-weight: 600;
+    color: var(--navy); margin-bottom: 0.4rem;
+  }
+  .interest-item p { font-size: 0.85rem; color: var(--muted); }
+
+  /* ── PROJECTS ── */
+  #projects { background: var(--white); }
+  .projects-label {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .project-card {
+    border: 1px solid var(--border);
+    padding: 1.8rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .project-card:hover {
+    border-color: var(--teal);
+    box-shadow: 0 4px 20px rgba(42,107,107,0.08);
+  }
+  .project-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 600;
+    color: var(--navy); margin-bottom: 0.5rem;
+  }
+  .project-card p { font-size: 0.88rem; color: #4b5563; margin-bottom: 1rem; line-height: 1.6; }
+  .project-links { display: flex; gap: 1rem; }
+  .project-links a {
+    font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--teal); text-decoration: none;
+    border-bottom: 1px solid var(--teal);
+    padding-bottom: 1px; transition: opacity 0.2s;
+  }
+  .project-links a:hover { opacity: 0.7; }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--navy); }
+  #skills .section-label { color: var(--teal-lt); }
+  #skills .section-title { color: var(--white); }
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+  .skill-group h4 {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--teal-lt); margin-bottom: 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .skill-list { list-style: none; }
+  .skill-list li {
+    font-size: 0.88rem; color: rgba(255,255,255,0.75);
+    padding: 0.35rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .skill-list li::before {
+    content: '';
+    width: 5px; height: 5px;
+    background: var(--teal-lt);
+    flex-shrink: 0;
+  }
+
+  /* ── TEACHING ── */
+  #teaching { background: var(--paper); }
+  .teaching-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .teaching-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 2rem;
+  }
+  .teaching-card .role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 600;
+    color: var(--navy); margin-bottom: 0.3rem;
+  }
+  .teaching-card .org {
+    font-size: 0.83rem; color: var(--teal);
+    font-weight: 500; margin-bottom: 0.2rem;
+  }
+  .teaching-card .period {
+    font-size: 0.78rem; color: var(--muted);
+    margin-bottom: 1rem;
+  }
+  .teaching-card p { font-size: 0.88rem; color: #4b5563; line-height: 1.65; }
+
+  /* ── HONORS ── */
+  #honors { background: var(--white); }
+  .honors-list { list-style: none; }
+  .honors-list li {
+    display: grid; grid-template-columns: auto 1fr;
+    gap: 1.5rem; align-items: start;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .honors-list li:first-child { border-top: 1px solid var(--border); }
+  .honor-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem; color: var(--muted);
+    min-width: 40px; padding-top: 0.1rem;
+  }
+  .honor-content strong {
+    display: block; font-size: 0.93rem;
+    font-weight: 500; color: var(--navy);
+    margin-bottom: 0.2rem;
+  }
+  .honor-content span { font-size: 0.83rem; color: var(--muted); }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--sand); }
+  .contact-inner {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: start;
+  }
+  .contact-left p {
+    font-size: 0.95rem; color: #374151;
+    margin-bottom: 1rem; line-height: 1.75;
+  }
+  .contact-links { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.5rem; }
+  .contact-link {
+    display: flex; align-items: center; gap: 0.8rem;
+    font-size: 0.88rem; color: var(--text);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .contact-link:hover { color: var(--teal); }
+  .contact-link-icon {
+    width: 32px; height: 32px;
+    background: var(--navy); color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; flex-shrink: 0;
+  }
+  .contact-right {}
+  .availability-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 2rem;
+  }
+  .availability-box h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 600;
+    color: var(--navy); margin-bottom: 1rem;
+  }
+  .avail-item {
+    display: flex; align-items: flex-start; gap: 0.8rem;
+    margin-bottom: 0.8rem; font-size: 0.88rem; color: #374151;
+  }
+  .avail-dot {
+    width: 8px; height: 8px; background: var(--teal);
+    flex-shrink: 0; margin-top: 0.45rem;
+  }
+  .schedule-btn {
+    display: block; margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem; text-align: center;
+    background: var(--teal); color: var(--white);
+    font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .schedule-btn:hover { background: var(--navy); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy); color: rgba(255,255,255,0.4);
+    padding: 2rem; text-align: center;
+    font-size: 0.8rem; letter-spacing: 0.04em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-toggle { display: block; }
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: absolute; top: 64px; left: 0; right: 0;
+      background: var(--paper); border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem; gap: 1rem;
+    }
+    #hero::after { display: none; }
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-right { flex-direction: row; flex-wrap: wrap; }
+    .hero-stat-card { flex: 1; min-width: 140px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .interests-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .teaching-grid { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .pub-card { grid-template-columns: 1fr; gap: 0.5rem; }
+  }
+  @media (max-width: 480px) {
+    .skills-grid { grid-template-columns: 1fr; }
+    .hero-btns { flex-direction: column; }
+  }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .fade-up {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
 </head>
-<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white overflow-x-hidden">
-    <!-- Scroll Progress Indicator -->
-    <div class="scroll-indicator" id="scrollProgress"></div>
-    
-    <!-- Animated Background Elements -->
-    <div class="fixed inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div class="absolute top-3/4 right-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
-        <div class="absolute bottom-1/4 left-1/3 w-80 h-80 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-2000"></div>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-brand">Shamas Liaqat</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#honors">Honors</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-left fade-up">
+      <span class="hero-tag">Applied Economist &amp; Quantitative Researcher</span>
+      <h1 class="hero-name">Shamas<br>Liaqat</h1>
+      <p class="hero-title">Agricultural Economics · Causal Inference · Python &amp; Data Analysis</p>
+      <p class="hero-desc">I study agricultural systems, rural livelihoods, and development policy using causal inference, econometrics, and modern data science tools. Currently pursuing PhD opportunities in agricultural, environmental, or development economics.</p>
+      <div class="hero-btns">
+        <a href="#research" class="btn-primary">View Research</a>
+        <a href="#contact" class="btn-secondary">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-right fade-up">
+      <div class="hero-stat-card">
+        <div class="stat-number">3.78</div>
+        <div class="stat-label">MSc CGPA — University of Agriculture, Faisalabad</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="stat-number">1</div>
+        <div class="stat-label">Scopus-indexed peer-reviewed publication (2022)</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="stat-number">2+</div>
+        <div class="stat-label">Years as Lecturer in Economics, Higher Education Dept. Punjab</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="stat-number">150</div>
+        <div class="stat-label">Rural households surveyed in MSc primary research</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label fade-up">About</p>
+    <h2 class="section-title fade-up">Background &amp; Identity</h2>
+    <div class="about-grid">
+      <div class="about-text fade-up">
+        <p>I am an agricultural and resource economist with an MSc (Hons) from the University of Agriculture, Faisalabad (CGPA 3.78/4.0). My thesis applied Propensity Score Matching to examine how non-farm work affects agricultural productivity and household income — drawing on primary survey data from 150 rural households in Pakistan.</p>
+        <p>I currently serve as a Lecturer in Economics at the Higher Education Department, Punjab, where I teach applied microeconomics and production theory. I was selected through the Punjab Public Service Commission's competitive examination — among 46 candidates chosen from over 2,000 applicants.</p>
+        <p>My research interests sit at the intersection of agricultural economics, climate policy, and rural development. I complement traditional econometric methods with Python-based data analysis, allowing me to work rigorously across large datasets and deliver reproducible, policy-relevant research.</p>
+        <p>I am currently pursuing PhD opportunities in agricultural, environmental, or development economics. Alongside academic work, I am open to remote research, data analysis, and applied economic consulting engagements.</p>
+      </div>
+      <div class="about-meta fade-up">
+        <div class="meta-item">
+          <strong>Education</strong>
+          <span>MSc (Hons) Agricultural Economics, UAF · CGPA 3.78/4.0<br>BSc (Hons) Agriculture &amp; Resource Economics, UAF · CGPA 3.70/4.0 · Bronze Medal</span>
+        </div>
+        <div class="meta-item">
+          <strong>Current Position</strong>
+          <span>Lecturer in Economics<br>Higher Education Department, Punjab, Pakistan</span>
+        </div>
+        <div class="meta-item">
+          <strong>Research Focus</strong>
+          <span>Causal Inference · Agricultural Policy · Rural Household Welfare · Climate &amp; Development Economics</span>
+        </div>
+        <div class="meta-item">
+          <strong>Languages</strong>
+          <span>English (Fluent) · Urdu (Native) · German (Beginner)</span>
+        </div>
+        <div class="meta-item">
+          <strong>Location</strong>
+          <span>Narowal, Punjab, Pakistan · Open to remote work</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="container">
+    <p class="section-label fade-up">Research</p>
+    <h2 class="section-title fade-up">Publications &amp; Research Interests</h2>
+
+    <div class="fade-up">
+      <div class="pub-card">
+        <div class="pub-year">2022</div>
+        <div>
+          <div class="pub-title">Developing Evidence-Based Policy and Programs in Mountainous Specific Agriculture in Gilgit-Baltistan and Chitral Regions of Pakistan</div>
+          <div class="pub-meta">Hussain, A., Khan, S., &amp; Liaqat, S. · <em>Pakistan Journal of Agricultural Research</em>, 35(1), 181–196</div>
+          <div class="pub-tags">
+            <span class="tag">Scopus-indexed</span>
+            <span class="tag">Agricultural Policy</span>
+            <span class="tag">Mountain Agriculture</span>
+            <a href="https://doi.org/10.17582/journal.pjar/2022/35.1.181.196" target="_blank" class="tag-doi">DOI →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-year">2023</div>
+        <div>
+          <div class="pub-title">Impact of Non-farm Work on Agricultural Productivity and Household Income of Farmers <em style="font-size:0.85rem; font-weight:400; color:var(--muted)">(MSc Thesis)</em></div>
+          <div class="pub-meta">University of Agriculture, Faisalabad · Supervised primary field research</div>
+          <div class="pub-tags">
+            <span class="tag">Propensity Score Matching</span>
+            <span class="tag">Causal Inference</span>
+            <span class="tag">N=150 Households</span>
+            <span class="tag">Stata / SPSS</span>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full glass-effect z-50 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <h1 class="text-2xl font-bold gradient-text">Shamas Liaqat</h1>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-300 hover:text-white transition-colors duration-300 relative group">
-                        Home
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300 relative group">
-                        About
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="#projects" class="text-gray-300 hover:text-white transition-colors duration-300 relative group">
-                        Projects
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="#achievements" class="text-gray-300 hover:text-white transition-colors duration-300 relative group">
-                        Achievements
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="#experience" class="text-gray-300 hover:text-white transition-colors duration-300 relative group">
-                        Experience
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300 relative group">
-                        Contact
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                </div>
-                <button class="md:hidden text-white" id="mobileMenu">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
+    <div class="fade-up">
+      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--navy); margin: 3rem 0 1rem;">Research Interests</h3>
+      <div class="interests-grid">
+        <div class="interest-item">
+          <h4>Climate Change &amp; Agriculture</h4>
+          <p>How climate variability affects crop yields, farmer adaptation, and food system resilience in developing economies.</p>
         </div>
-    </nav>
+        <div class="interest-item">
+          <h4>Rural Poverty &amp; Household Welfare</h4>
+          <p>Causal evaluation of non-farm income, social programs, and policy interventions on smallholder welfare.</p>
+        </div>
+        <div class="interest-item">
+          <h4>Food Security &amp; Policy Analysis</h4>
+          <p>Supply chains, price volatility, and governance structures determining food access in rural regions.</p>
+        </div>
+        <div class="interest-item">
+          <h4>Land Use &amp; Environmental Economics</h4>
+          <p>Land tenure, resource allocation, and economic valuation of ecosystem services in agricultural landscapes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Mobile Menu -->
-    <div class="hidden md:hidden bg-gray-800 glass-effect w-full absolute top-16 left-0 z-40" id="mobileMenuContent">
-        <div class="flex flex-col items-center py-4">
-            <a href="#home" class="text-gray-300 hover:text-white py-2">Home</a>
-            <a href="#about" class="text-gray-300 hover:text-white py-2">About</a>
-            <a href="#projects" class="text-gray-300 hover:text-white py-2">Projects</a>
-            <a href="#achievements" class="text-gray-300 hover:text-white py-2">Achievements</a>
-            <a href="#experience" class="text-gray-300 hover:text-white py-2">Experience</a>
-            <a href="#contact" class="text-gray-300 hover:text-white py-2">Contact</a>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <p class="section-label fade-up">Projects</p>
+    <h2 class="section-title fade-up">Selected Work</h2>
+
+    <p class="projects-label fade-up">Research &amp; Data Projects</p>
+    <div class="projects-grid fade-up">
+      <div class="project-card">
+        <h4>Agricultural Structural Transformation Analysis</h4>
+        <p>Data-driven analysis of agricultural structural transformation using World Bank indicators from 1961 to 2023. Explores long-run shifts in employment, output, and productivity across developing economies using Python.</p>
+        <div class="pub-tags" style="margin-bottom:1rem;">
+          <span class="tag">Python</span><span class="tag">World Bank Data</span><span class="tag">Development Economics</span>
         </div>
+        <div class="project-links">
+          <a href="https://github.com/Shamas245/agricultural-structural-transformation" target="_blank">GitHub →</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h4>DeepAgro — Agricultural AI Recommendation System</h4>
+        <p>A multi-agent AI system providing intelligent agricultural recommendations by analyzing farm conditions, environmental data, and economic factors. Built to demonstrate how modern AI tools can assist smallholder decision-making.</p>
+        <div class="pub-tags" style="margin-bottom:1rem;">
+          <span class="tag">Python</span><span class="tag">Multi-agent AI</span><span class="tag">Agricultural Systems</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Shamas245/DeepAgro" target="_blank">GitHub →</a>
+        </div>
+      </div>
     </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative pt-16">
-        <div class="text-center max-w-5xl mx-auto px-4 z-10">
-            <div class="floating mb-8">
-                <!-- Replace with your actual profile image -->
-                <div class="relative mx-auto mb-6">
-                    <img src="images/1735743565157.jpeg" alt="Shamas Liaqat Profile Picture" class="profile-image mx-auto glow"> 
-    
-                    <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-r from-green-400 to-blue-400 rounded-full flex items-center justify-center">
-                        <i class="fas fa-code text-white text-lg"></i>
-                    </div>
-                </div>
-            </div>
-            <h1 class="text-5xl sm:text-7xl font-bold mb-6">
-                <span class="gradient-text">Shamas Liaqat</span>
-            </h1>
-            <div class="text-xl sm:text-2xl text-gray-300 mb-4 h-16 flex items-center justify-center">
-                <span id="typingText" class="typing"></span>
-            </div>
-            <p class="text-lg text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Elite AI Agent Developer • Multi-Agent Systems Architect • Stanford Section Leader • International Hackathon Winner • Building the future with cutting-edge AI technologies
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#projects" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-full hover:shadow-2xl transition-all duration-300 hover:scale-105 glow">
-                    <i class="fas fa-rocket mr-2"></i>
-                    Explore My Work
-                </a>
-                <a href="#contact" class="inline-flex items-center px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-full hover:bg-purple-400 hover:text-white transition-all duration-300 hover:scale-105">
-                    <i class="fas fa-coffee mr-2"></i>
-                    Let's Connect
-                </a>
-                <a href="https://drive.google.com/file/d/1GuLoel5VqwOPETCn3bsP1ENmWDVlRHt6/view?usp=drive_link" class="inline-flex items-center px-8 py-4 border-2 border-blue-400 text-blue-400 font-semibold rounded-full hover:bg-blue-400 hover:text-white transition-all duration-300 hover:scale-105">
-                    <i class="fas fa-file-download mr-2"></i>
-                    Download Resume
-                </a>
-            </div>
+    <p class="projects-label fade-up" style="margin-top:2.5rem;">Teaching &amp; Educational Tools</p>
+    <div class="projects-grid fade-up">
+      <div class="project-card">
+        <h4>Basic Python for Economics</h4>
+        <p>An open-access beginner notebook series designed to help economics students and professionals learn Python through practical, real-world economic examples. Developed from classroom experience.</p>
+        <div class="pub-tags" style="margin-bottom:1rem;">
+          <span class="tag">Python</span><span class="tag">Education</span><span class="tag">Open Access</span>
         </div>
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <i class="fas fa-chevron-down text-2xl text-gray-400"></i>
+        <div class="project-links">
+          <a href="https://github.com/Shamas245/Basic_Python_for_Economics" target="_blank">GitHub →</a>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold gradient-text mb-4">About Me</h2>
-                <p class="text-gray-400 text-lg">Passionate AI Developer & Educator</p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <div class="glass-effect rounded-2xl p-8">
-                        <h3 class="text-2xl font-bold mb-4 text-white">My Journey</h3>
-                        <p class="text-gray-300 leading-relaxed mb-4">
-                            I’m Shamas Liaqat, a Python AI Agent Developer with a unique blend of agricultural economics expertise and cutting-edge AI development skills. My journey began with a BSc and MSc (Hons.) in Agricultural Economics from the University of Agriculture, Faisalabad, where I developed a strong foundation in data-driven problem-solving.
-                        </p>
-                        <p class="text-gray-300 leading-relaxed">
-                            As a Stanford Code in Place Section Leader and Python Developer at DoTech.Ai, I specialize in building intelligent systems like RAG-powered chatbots and multi-agent AI workflows. My projects, such as Book-RAG-Chatbot and DeepAgro, showcase my ability to create scalable, impactful solutions. I’m passionate about mentoring aspiring developers and pushing the boundaries of AI innovation.
-                        </p>
-                    </div>
-                    
-                    <div class="glass-effect rounded-2xl p-8">
-                        <h3 class="text-2xl font-bold mb-6 text-white">Core Expertise</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-gray-300">AI Agent Development</span>
-                                    <span class="text-purple-400">98%</span>
-                                </div>
-                                <div class="w-full bg-gray-700 rounded-full h-2">
-                                    <div class="skill-bar w-[98%] h-2 rounded-full"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-gray-300">Multi-Agent Systems</span>
-                                    <span class="text-purple-400">95%</span>
-                                </div>
-                                <div class="w-full bg-gray-700 rounded-full h-2">
-                                    <div class="skill-bar w-[95%] h-2 rounded-full"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-gray-300">RAG & Vector Databases</span>
-                                    <span class="text-purple-400">92%</span>
-                                </div>
-                                <div class="w-full bg-gray-700 rounded-full h-2">
-                                    <div class="skill-bar w-[92%] h-2 rounded-full"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-gray-300">Problem Solving & Innovation</span>
-                                    <span class="text-purple-400">96%</span>
-                                </div>
-                                <div class="w-full bg-gray-700 rounded-full h-2">
-                                    <div class="skill-bar w-[96%] h-2 rounded-full"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="space-y-6">
-                    <div class="glass-effect rounded-2xl p-8">
-                        <h3 class="text-2xl font-bold mb-6 text-white flex items-center">
-                            <i class="fas fa-tools mr-3 text-purple-400"></i>
-                            Advanced Tech Stack
-                        </h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="project-tech rounded-lg p-4 text-center">
-                                <i class="fab fa-python text-3xl text-yellow-400 mb-2"></i>
-                                <p class="text-sm font-semibold">Python</p>
-                            </div>
-                            <div class="project-tech rounded-lg p-4 text-center">
-                                <i class="fas fa-brain text-3xl text-blue-400 mb-2"></i>
-                                <p class="text-sm font-semibold">OpenAI SDK</p>
-                            </div>
-                            <div class="project-tech rounded-lg p-4 text-center">
-                                <i class="fas fa-network-wired text-3xl text-green-400 mb-2"></i>
-                                <p class="text-sm font-semibold">LangGraph</p>
-                            </div>
-                            <div class="project-tech rounded-lg p-4 text-center">
-                                <i class="fas fa-users text-3xl text-purple-400 mb-2"></i>
-                                <p class="text-sm font-semibold">CrewAI</p>
-                            </div>
-                            <div class="project-tech rounded-lg p-4 text-center">
-                                <i class="fas fa-rocket text-3xl text-red-400 mb-2"></i>
-                                <p class="text-sm font-semibold">FastAPI</p>
-                            </div>
-                            <div class="project-tech rounded-lg p-4 text-center">
-                                <i class="fab fa-google text-3xl text-cyan-400 mb-2"></i>
-                                <p class="text-sm font-semibold">Google ADK</p>
-                            </div>
-                            <div class="project-tech rounded-lg p-4 text-center">
-                                <i class="fas fa-database text-3xl text-pink-400 mb-2"></i>
-                                <p class="text-sm font-semibold">FAISS</p>
-                            </div>
-                            <div class="project-tech rounded-lg p-4 text-center">
-                                <i class="fab fa-docker text-3xl text-blue-500 mb-2"></i>
-                                <p class="text-sm font-semibold">Docker</p>
-                            </div>
-                            <div class="project-tech rounded-lg p-4 text-center">
-                                <i class="fas fa-server text-3xl text-orange-400 mb-2"></i>
-                                <p class="text-sm font-semibold">MySQL</p>
-                            </div>
-                            <div class="project-tech rounded-lg p-4 text-center">
-                                <i class="fas fa-exchange-alt text-3xl text-teal-400 mb-2"></i>
-                                <p class="text-sm font-semibold">A2A Communication</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="project-card">
+        <h4>Meeting Summarizer</h4>
+        <p>A Streamlit-based productivity application that processes audio, video, or transcript files to generate structured meeting summaries and action items — demonstrating applied NLP in professional contexts.</p>
+        <div class="pub-tags" style="margin-bottom:1rem;">
+          <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">NLP</span>
         </div>
-    </section>
-
-    <!-- Achievements Section -->
-    <section id="achievements" class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold gradient-text mb-4">Achievements & Recognition</h2>
-                <p class="text-gray-400 text-lg">Competitive Excellence & Academic Leadership</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="achievement-badge rounded-2xl p-8 card-hover">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-r from-red-400 to-pink-400 rounded-2xl flex items-center justify-center mb-4 mx-auto">
-                            <i class="fas fa-graduation-cap text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Harvard CS50x</h3>
-                        <p class="text-gray-300 text-sm mb-4">Perfect Score Achievement</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-purple-400 mb-2">9/9</div>
-                        <p class="text-gray-400 text-sm">Problem Sets Solved</p>
-                        <p class="text-gray-300 text-xs mt-2">Demonstrated exceptional problem-solving skills in Harvard's renowned computer science course</p>
-                    </div>
-                </div>
-                <div class="achievement-badge rounded-2xl p-8 card-hover">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-2xl flex items-center justify-center mb-4 mx-auto">
-                            <i class="fas fa-trophy text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">MIT Coding Competition</h3>
-                        <p class="text-gray-300 text-sm mb-4">Team Achievement</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-blue-400 mb-2">Top Rank</div>
-                        <p class="text-gray-400 text-sm">Renowned Position</p>
-                        <p class="text-gray-300 text-xs mt-2">Led team to distinguished ranking in prestigious MIT coding competition</p>
-                    </div>
-                </div>
-                <div class="achievement-badge rounded-2xl p-8 card-hover">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-emerald-400 rounded-2xl flex items-center justify-center mb-4 mx-auto">
-                            <i class="fas fa-globe text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Global Hackathons</h3>
-                        <p class="text-gray-300 text-sm mb-4">International Participation</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-green-400 mb-2">10+</div>
-                        <p class="text-gray-400 text-sm">Hackathons Completed</p>
-                        <p class="text-gray-300 text-xs mt-2">Extensive experience in rapid prototyping and innovative solution development</p>
-                    </div>
-                </div>
-                <div class="achievement-badge rounded-2xl p-8 card-hover">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-2xl flex items-center justify-center mb-4 mx-auto">
-                            <i class="fas fa-university text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Stanford Section Leader</h3>
-                        <p class="text-gray-300 text-sm mb-4">Educational Excellence</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-purple-400 mb-2">Elite</div>
-                        <p class="text-gray-400 text-sm">Teaching Position</p>
-                        <p class="text-gray-300 text-xs mt-2">Selected to guide students in Stanford's Code in Place program</p>
-                    </div>
-                </div>
-                <div class="achievement-badge rounded-2xl p-8 card-hover">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-2xl flex items-center justify-center mb-4 mx-auto">
-                            <i class="fas fa-lightbulb text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">AI Innovation</h3>
-                        <p class="text-gray-300 text-sm mb-4">Technical Leadership</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-yellow-400 mb-2">Pioneer</div>
-                        <p class="text-gray-400 text-sm">AI Agent Systems</p>
-                        <p class="text-gray-300 text-xs mt-2">Developing cutting-edge multi-agent AI solutions at industry scale</p>
-                    </div>
-                </div>
-                <div class="achievement-badge rounded-2xl p-8 card-hover">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-r from-pink-400 to-rose-400 rounded-2xl flex items-center justify-center mb-4 mx-auto">
-                            <i class="fas fa-heart text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Community Builder</h3>
-                        <p class="text-gray-300 text-sm mb-4">Educational Impact</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-pink-400 mb-2">Mentor</div>
-                        <p class="text-gray-400 text-sm">Future Developers</p>
-                        <p class="text-gray-300 text-xs mt-2">Inspiring and guiding the next generation of AI developers</p>
-                    </div>
-                </div>
-            </div>
+        <div class="project-links">
+          <a href="https://github.com/Shamas245/meeting_summarizer" target="_blank">GitHub →</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold gradient-text mb-4">Featured Projects</h2>
-                <p class="text-gray-400 text-lg">Innovative AI solutions that make a difference</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Book-RAG-Chatbot -->
-                <div class="glass-effect rounded-2xl p-8 card-hover">
-                    <div class="mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-400 rounded-2xl flex items-center justify-center mb-4">
-                            <i class="fas fa-book-open text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">Book-RAG-Chatbot</h3>
-                        <p class="text-gray-300 leading-relaxed mb-4">
-                            A revolutionary Streamlit-based Q&A system that transforms PDF books into interactive learning experiences. Features advanced RAG architecture with context-aware responses, user authentication, conversation history, and intelligent document parsing for text and images.
-                        </p>
-                    </div>
-                    <div class="mb-6">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-xs">Python</span>
-                            <span class="px-3 py-1 bg-green-900 text-green-300 rounded-full text-xs">Streamlit</span>
-                            <span class="px-3 py-1 bg-purple-900 text-purple-300 rounded-full text-xs">LangChain</span>
-                            <span class="px-3 py-1 bg-red-900 text-red-300 rounded-full text-xs">FAISS</span>
-                            <span class="px-3 py-1 bg-yellow-900 text-yellow-300 rounded-full text-xs">Gemini AI</span>
-                            <span class="px-3 py-1 bg-teal-900 text-teal-300 rounded-full text-xs">PyMuPDF</span>
-                        </div>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="https://github.com/Shamas245/book-rag-chatbot" class="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
-                            <i class="fab fa-github mr-2"></i>
-                            Code
-                        </a>
-                        <a href="https://rag123.streamlit.app/" class="flex items-center text-blue-400 hover:text-blue-300 transition-colors">
-                            <i class="fas fa-external-link-alt mr-2"></i>
-                            Live Demo
-                        </a>
-                    </div>
-                </div>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="section-label fade-up">Expertise</p>
+    <h2 class="section-title fade-up">Skills &amp; Competencies</h2>
+    <div class="skills-grid fade-up">
+      <div class="skill-group">
+        <h4>Economics &amp; Research</h4>
+        <ul class="skill-list">
+          <li>Causal Inference (PSM, DiD, IV)</li>
+          <li>Regression &amp; Panel Data Analysis</li>
+          <li>Survey Design &amp; Data Collection</li>
+          <li>Policy Evaluation Frameworks</li>
+          <li>Stata &amp; SPSS</li>
+          <li>Systematic Literature Review</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Data &amp; Programming</h4>
+        <ul class="skill-list">
+          <li>Python (Pandas, NumPy, Statsmodels)</li>
+          <li>Scikit-learn &amp; Machine Learning</li>
+          <li>Data Visualization</li>
+          <li>Household &amp; Panel Datasets</li>
+          <li>Reproducible Research Workflows</li>
+          <li>Cross-sectional Data Analysis</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Domain Knowledge</h4>
+        <ul class="skill-list">
+          <li>Agricultural Economics</li>
+          <li>Environmental Economics</li>
+          <li>Development Economics</li>
+          <li>Production Theory</li>
+          <li>Rural Household Behaviour</li>
+          <li>Food &amp; Climate Policy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <!-- DeepAgro -->
-                <div class="glass-effect rounded-2xl p-8 card-hover">
-                    <div class="mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-blue-400 rounded-2xl flex items-center justify-center mb-4">
-                            <i class="fas fa-seedling text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">DeepAgro</h3>
-                        <p class="text-gray-300 leading-relaxed mb-4">
-                            A cutting-edge multi-agent AI system delivering personalized agricultural recommendations. Integrates real-time environmental and economic data with advanced machine learning to optimize farming strategies. Features specialized agents for user interaction, data analysis, and planning.
-                        </p>
-                    </div>
-                    <div class="mb-6">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-xs">Python</span>
-                            <span class="px-3 py-1 bg-green-900 text-green-300 rounded-full text-xs">CAMEL AI</span>
-                            <span class="px-3 py-1 bg-purple-900 text-purple-300 rounded-full text-xs">Google AI</span>
-                            <span class="px-3 py-1 bg-yellow-900 text-yellow-300 rounded-full text-xs">Multi-Agent</span>
-                        </div>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="https://github.com/Shamas245/DeepAgro" class="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
-                            <i class="fab fa-github mr-2"></i>
-                            Code
-                        </a>
-                    </div>
-                </div>
+<!-- TEACHING -->
+<section id="teaching">
+  <div class="container">
+    <p class="section-label fade-up">Teaching</p>
+    <h2 class="section-title fade-up">Teaching &amp; Mentoring</h2>
+    <div class="teaching-grid fade-up">
+      <div class="teaching-card">
+        <div class="role">Lecturer in Economics</div>
+        <div class="org">Higher Education Department — Punjab, Pakistan</div>
+        <div class="period">January 2023 — Present</div>
+        <p>Teaches applied microeconomics and production theory, including incentive structures, decision-making under uncertainty, and market behaviour. Develops activity-based learning to build analytical and critical thinking. Selected through the Punjab Public Service Commission — 46 appointed from 2,000+ applicants.</p>
+      </div>
+      <div class="teaching-card">
+        <div class="role">Section Leader</div>
+        <div class="org">Stanford University: Code in Place — Remote</div>
+        <div class="period">April 2025 — June 2025</div>
+        <p>Facilitated live Python programming sessions for 20+ international students. Mentored participants in logical reasoning and computational thinking within a globally inclusive learning environment. One of a select group of educators chosen for this program from applicants worldwide.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <!-- Debate-Coach -->
-                <div class="glass-effect rounded-2xl p-8 card-hover">
-                    <div class="mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-2xl flex items-center justify-center mb-4">
-                            <i class="fas fa-comments text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">Debate-Coach</h3>
-                        <p class="text-gray-300 leading-relaxed mb-4">
-                            An AI-powered chatbot designed to enhance debate preparation. Built with Streamlit and Google Generative AI, it offers structured guidance, practice scenarios, and example content for Declamation, Parliamentary Debate, and Model United Nations (MUN).
-                        </p>
-                    </div>
-                    <div class="mb-6">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-xs">Python</span>
-                            <span class="px-3 py-1 bg-green-900 text-green-300 rounded-full text-xs">Streamlit</span>
-                            <span class="px-3 py-1 bg-purple-900 text-purple-300 rounded-full text-xs">Google AI</span>
-                        </div>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="https://github.com/Shamas245/Debate-Coach" class="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
-                            <i class="fab fa-github mr-2"></i>
-                            Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- SpaceCrew -->
-                <div class="glass-effect rounded-2xl p-8 card-hover">
-                    <div class="mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-2xl flex items-center justify-center mb-4">
-                            <i class="fas fa-space-shuttle text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">SpaceCrew</h3>
-                        <p class="text-gray-300 leading-relaxed mb-4">
-                            An AI-powered multi-agent system for analyzing space-related queries. Integrates NASA APIs with CrewAI and LangChain to fetch and summarize data, delivering engaging, context-aware responses.
-                        </p>
-                    </div>
-                    <div class="mb-6">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-xs">Python</span>
-                            <span class="px-3 py-1 bg-green-900 text-green-300 rounded-full text-xs">CrewAI</span>
-                            <span class="px-3 py-1 bg-purple-900 text-purple-300 rounded-full text-xs">LangChain</span>
-                            <span class="px-3 py-1 bg-yellow-900 text-yellow-300 rounded-full text-xs">NASA APIs</span>
-                        </div>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="https://github.com/Shamas245/-SpaceCrew-" class="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
-                            <i class="fab fa-github mr-2"></i>
-                            Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Course Development Platform -->
-                <div class="glass-effect rounded-2xl p-8 card-hover">
-                    <div class="mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-r from-orange-400 to-red-400 rounded-2xl flex items-center justify-center mb-4">
-                            <i class="fas fa-chalkboard-teacher text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">Course Development Platform</h3>
-                        <p class="text-gray-300 leading-relaxed mb-4">
-                            A platform for creating and managing educational courses with AI-driven content generation and interactive features. Built with modern AI tools to streamline course creation and delivery.
-                        </p>
-                    </div>
-                    <div class="mb-6">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-xs">Python</span>
-                            <span class="px-3 py-1 bg-green-900 text-green-300 rounded-full text-xs">Streamlit</span>
-                            <span class="px-3 py-1 bg-purple-900 text-purple-300 rounded-full text-xs">Google AI</span>
-                        </div>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="https://github.com/Shamas245/Course_Development_Platform" class="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
-                            <i class="fab fa-github mr-2"></i>
-                            Code
-                        </a>
-                    </div>
-                </div>
-            </div>
+<!-- HONORS -->
+<section id="honors">
+  <div class="container">
+    <p class="section-label fade-up">Recognition</p>
+    <h2 class="section-title fade-up">Honors &amp; Awards</h2>
+    <ul class="honors-list fade-up">
+      <li>
+        <span class="honor-year">2017–21</span>
+        <div class="honor-content">
+          <strong>Bronze Medal — Ranked 3rd out of 85 Students</strong>
+          <span>BSc (Hons) Agriculture &amp; Resource Economics · University of Agriculture, Faisalabad</span>
         </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold gradient-text mb-4">Professional Experience</h2>
-                <p class="text-gray-400 text-lg">Driving Innovation in AI and Education</p>
-            </div>
-            
-            <div class="space-y-8">
-                <div class="glass-effect rounded-2xl p-8 card-hover">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-university text-xl text-white"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-white">Stanford Code in Place</h3>
-                            <p class="text-gray-400 text-sm">Section Leader | April 2025 - Present</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 leading-relaxed">
-                        Lead virtual sections for Stanford's Code in Place, teaching Python programming to a global cohort of students. Develop engaging curricula and provide personalized feedback to foster learning and growth.
-                    </p>
-                </div>
-                <div class="glass-effect rounded-2xl p-8 card-hover">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-code text-xl text-white"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-white">DoTech.Ai</h3>
-                            <p class="text-gray-400 text-sm">Python Developer | August 2023 - Present</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 leading-relaxed">
-                        Design and develop advanced AI agent systems, including multi-agent architectures and RAG-based applications, using Python, FastAPI, and vector databases like FAISS and Pinecone.
-                    </p>
-                </div>
-                <div class="glass-effect rounded-2xl p-8 card-hover">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-chalkboard-teacher text-xl text-white"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-white">Govt. Associate College Chawinda</h3>
-                            <p class="text-gray-400 text-sm">Lecturer | January 2023 - Present</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 leading-relaxed">
-                        Teach economics and business, integrating AI concepts into the curriculum to prepare students for modern technological challenges.
-                    </p>
-                </div>
-            </div>
+      </li>
+      <li>
+        <span class="honor-year">2022</span>
+        <div class="honor-content">
+          <strong>Lecturer (Economics) — Punjab Public Service Commission</strong>
+          <span>Competitively appointed — 46 selected from 2,000+ applicants across Punjab</span>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold gradient-text mb-4">Get in Touch</h2>
-                <p class="text-gray-400 text-lg">Let's collaborate on your next AI project!</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <div class="flex space-x-6 mb-6">
-                    <a href="mailto:shamasliaqat780@gmail.com" class="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
-                        <i class="fas fa-envelope mr-2"></i>
-                        Email
-                    </a>
-                    <a href="https://linkedin.com/in/shamasliaqat" class="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
-                        <i class="fab fa-linkedin mr-2"></i>
-                        LinkedIn
-                    </a>
-                    <a href="https://github.com/Shamas245" class="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
-                        <i class="fab fa-github mr-2"></i>
-                        GitHub
-                    </a>
-                </div>
-                <p class="text-gray-400 mb-4">Narowal, Punjab, Pakistan | +923025157841</p>
-                <a href="https://calendly.com/shamasliaqat245/30min" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-full hover:shadow-2xl transition-all duration-300 hover:scale-105 glow">
-                    <i class="fas fa-calendar-alt mr-2"></i>
-                    Schedule a Call
-                </a>
-            </div>
+      </li>
+      <li>
+        <span class="honor-year">2022</span>
+        <div class="honor-content">
+          <strong>World Bank ESF in Practice Training</strong>
+          <span>Environmental &amp; Social Framework training for academic institutions · Lahore, Pakistan</span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-gray-400">© 2025 Shamas Liaqat. All rights reserved.</p>
+      </li>
+      <li>
+        <span class="honor-year">2024</span>
+        <div class="honor-content">
+          <strong>NASA Space Apps Challenge</strong>
+          <span>Global participation — 93,000+ participants across 160+ countries</span>
         </div>
-    </footer>
+      </li>
+      <li>
+        <span class="honor-year">2025</span>
+        <div class="honor-content">
+          <strong>Section Leader — Stanford University: Code in Place</strong>
+          <span>Selected to lead international programming sections for Stanford's global Python education program</span>
+        </div>
+      </li>
+      <li>
+        <span class="honor-year">2025</span>
+        <div class="honor-content">
+          <strong>AERE–GSE Professional Development Panel</strong>
+          <span>Association of Environmental &amp; Resource Economists — Panel on novel datasets and contemporary empirical skillsets</span>
+        </div>
+      </li>
+      <li>
+        <span class="honor-year">–</span>
+        <div class="honor-content">
+          <strong>Harvard CS50x — All 9 Problem Sets Completed</strong>
+          <span>Harvard University's introduction to computer science — full course completion</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
 
-    <script>
-        // Typing animation
-        const texts = [
-            "Python AI Agent Developer",
-            "Multi-Agent Systems Architect",
-            "Stanford Section Leader",
-        ];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingText = document.getElementById('typingText');
-        
-        function type() {
-            const currentText = texts[textIndex];
-            if (isDeleting) {
-                typingText.textContent = currentText.substring(0, charIndex--);
-                if (charIndex < 0) {
-                    isDeleting = false;
-                    textIndex = (textIndex + 1) % texts.length;
-                }
-            } else {
-                typingText.textContent = currentText.substring(0, charIndex++);
-                if (charIndex > currentText.length) {
-                    isDeleting = true;
-                    setTimeout(type, 1000);
-                    return;
-                }
-            }
-            setTimeout(type, isDeleting ? 50 : 100);
-        }
-        type();
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label fade-up">Contact</p>
+    <h2 class="section-title fade-up">Get in Touch</h2>
+    <div class="contact-inner fade-up">
+      <div class="contact-left">
+        <p>I welcome inquiries related to PhD program opportunities, research collaborations, and remote data analysis or applied economic consulting work.</p>
+        <p>Whether you are a prospective supervisor, a research institution, or an organization seeking rigorous quantitative analysis, I am happy to discuss how I can contribute.</p>
+        <div class="contact-links">
+          <a href="mailto:shamasliaqat780@gmail.com" class="contact-link">
+            <span class="contact-link-icon">✉</span>
+            shamasliaqat780@gmail.com
+          </a>
+          <a href="https://linkedin.com/in/shamasliaqat" target="_blank" class="contact-link">
+            <span class="contact-link-icon">in</span>
+            linkedin.com/in/shamasliaqat
+          </a>
+          <a href="https://github.com/Shamas245" target="_blank" class="contact-link">
+            <span class="contact-link-icon">gh</span>
+            github.com/Shamas245
+          </a>
+          <a href="tel:+923025157841" class="contact-link">
+            <span class="contact-link-icon">☎</span>
+            +92-302-5157841
+          </a>
+        </div>
+      </div>
+      <div class="contact-right">
+        <div class="availability-box">
+          <h4>Currently Open To</h4>
+          <div class="avail-item">
+            <span class="avail-dot"></span>
+            <span>PhD applications in Agricultural, Environmental, or Development Economics</span>
+          </div>
+          <div class="avail-item">
+            <span class="avail-dot"></span>
+            <span>Research assistant or data analyst roles at universities and policy institutes</span>
+          </div>
+          <div class="avail-item">
+            <span class="avail-dot"></span>
+            <span>Remote consulting in quantitative data analysis and econometrics</span>
+          </div>
+          <div class="avail-item">
+            <span class="avail-dot"></span>
+            <span>Collaborative research projects in agricultural or development economics</span>
+          </div>
+          <a href="https://calendly.com/shamasliaqat245/30min" target="_blank" class="schedule-btn">Schedule a Call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobileMenu');
-        const mobileMenuContent = document.getElementById('mobileMenuContent');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenuContent.classList.toggle('hidden');
-        });
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Shamas Liaqat · Applied Economist · Narowal, Punjab, Pakistan</p>
+</footer>
 
-        // Scroll progress indicator
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            document.getElementById('scrollProgress').style.width = scrollPercent + '%';
-        });
+<script>
+  // Mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const links  = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
 
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                mobileMenuContent.classList.add('hidden');
-            });
-        });
-    </script>
+  // Scroll-triggered fade-up
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>

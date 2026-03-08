@@ -20,400 +20,142 @@
     --white:   #ffffff;
     --text:    #1a2535;
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--text); line-height: 1.7; overflow-x: hidden; }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--paper);
-    color: var(--text);
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(253,250,245,0.95);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 2rem;
-    height: 64px;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .nav-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.25rem; font-weight: 600;
-    color: var(--navy); text-decoration: none;
-    letter-spacing: 0.02em;
-  }
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(253,250,245,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--navy); text-decoration: none; letter-spacing: 0.02em; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    font-size: 0.8rem; font-weight: 500;
-    color: var(--muted); text-decoration: none;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    transition: color 0.2s;
-  }
+  .nav-links a { font-size: 0.8rem; font-weight: 500; color: var(--muted); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: var(--teal); }
   .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-  .nav-toggle span {
-    display: block; width: 22px; height: 1.5px;
-    background: var(--navy); margin: 5px 0;
-    transition: all 0.3s;
-  }
+  .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--navy); margin: 5px 0; }
 
-  /* ── SECTIONS ── */
+  /* SECTIONS */
   section { padding: 6rem 0; }
   .container { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
-  .section-label {
-    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--teal);
-    margin-bottom: 0.75rem;
-  }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    font-weight: 600; color: var(--navy);
-    line-height: 1.2; margin-bottom: 2.5rem;
-  }
+  .section-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 600; color: var(--navy); line-height: 1.2; margin-bottom: 2.5rem; }
 
-  /* ── HERO ── */
-  #hero {
-    min-height: 100vh;
-    display: flex; align-items: center;
-    padding-top: 64px;
-    background: var(--paper);
-    position: relative;
-  }
-  #hero::after {
-    content: '';
-    position: absolute; right: 0; top: 0; bottom: 0;
-    width: 38%;
-    background: var(--sand);
-    z-index: 0;
-  }
-  .hero-inner {
-    position: relative; z-index: 1;
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 4rem; align-items: center;
-    width: 100%; max-width: 960px;
-    margin: 0 auto; padding: 0 2rem;
-  }
-  .hero-left {}
-  .hero-tag {
-    display: inline-block;
-    font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--teal); font-weight: 500;
-    border: 1px solid var(--teal);
-    padding: 0.3rem 0.8rem; margin-bottom: 1.5rem;
-  }
-  .hero-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.8rem, 6vw, 4.2rem);
-    font-weight: 700; line-height: 1.05;
-    color: var(--navy); margin-bottom: 1rem;
-  }
-  .hero-title {
-    font-size: 0.95rem; color: var(--muted);
-    font-weight: 400; margin-bottom: 1.5rem;
-    line-height: 1.6;
-  }
-  .hero-desc {
-    font-size: 1rem; color: var(--text);
-    max-width: 460px; margin-bottom: 2.5rem;
-    line-height: 1.75;
-  }
+  /* HERO */
+  #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 64px; background: var(--paper); position: relative; }
+  #hero::after { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 38%; background: var(--sand); z-index: 0; }
+  .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; width: 100%; max-width: 960px; margin: 0 auto; padding: 0 2rem; }
+
+  /* HERO PROFILE — photo + name */
+  .hero-profile { display: flex; align-items: center; gap: 1.2rem; margin-bottom: 1.8rem; }
+  .hero-photo { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 2px solid var(--teal); flex-shrink: 0; filter: grayscale(15%); }
+  .hero-photo-name { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; }
+  .hero-tag { display: inline-block; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); font-weight: 500; }
+
+  .hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 6vw, 4.2rem); font-weight: 700; line-height: 1.05; color: var(--navy); margin-bottom: 1rem; }
+  .hero-title { font-size: 0.95rem; color: var(--muted); font-weight: 400; margin-bottom: 1.5rem; line-height: 1.6; }
+  .hero-desc { font-size: 1rem; color: var(--text); max-width: 460px; margin-bottom: 2.5rem; line-height: 1.75; }
   .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-primary {
-    display: inline-block; padding: 0.7rem 1.8rem;
-    background: var(--navy); color: var(--white);
-    font-size: 0.8rem; font-weight: 500;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    text-decoration: none; transition: background 0.2s;
-  }
+  .btn-primary { display: inline-block; padding: 0.7rem 1.8rem; background: var(--navy); color: var(--white); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
   .btn-primary:hover { background: var(--teal); }
-  .btn-secondary {
-    display: inline-block; padding: 0.7rem 1.8rem;
-    border: 1px solid var(--navy); color: var(--navy);
-    font-size: 0.8rem; font-weight: 500;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    text-decoration: none; transition: all 0.2s;
-  }
+  .btn-secondary { display: inline-block; padding: 0.7rem 1.8rem; border: 1px solid var(--navy); color: var(--navy); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; }
   .btn-secondary:hover { background: var(--navy); color: var(--white); }
-
-  .hero-right {
-    display: flex; flex-direction: column; gap: 1.5rem;
-  }
-  .hero-stat-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    padding: 1.4rem 1.6rem;
-  }
-  .stat-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem; font-weight: 700; color: var(--teal);
-    line-height: 1;
-  }
+  .hero-right { display: flex; flex-direction: column; gap: 1.5rem; }
+  .hero-stat-card { background: var(--white); border: 1px solid var(--border); padding: 1.4rem 1.6rem; }
+  .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: var(--teal); line-height: 1; }
   .stat-label { font-size: 0.82rem; color: var(--muted); margin-top: 0.3rem; }
 
-  /* ── ABOUT ── */
+  /* ABOUT */
   #about { background: var(--white); }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
   .about-text p { color: #374151; margin-bottom: 1.2rem; font-size: 0.97rem; }
   .about-text p:last-child { margin-bottom: 0; }
   .about-meta { display: flex; flex-direction: column; gap: 1.2rem; }
-  .meta-item {
-    padding: 1.2rem 1.4rem;
-    background: var(--sand);
-    border-left: 3px solid var(--teal);
-  }
-  .meta-item strong {
-    display: block; font-size: 0.8rem; font-weight: 500;
-    text-transform: uppercase; letter-spacing: 0.08em;
-    color: var(--teal); margin-bottom: 0.3rem;
-  }
+  .meta-item { padding: 1.2rem 1.4rem; background: var(--sand); border-left: 3px solid var(--teal); }
+  .meta-item strong { display: block; font-size: 0.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal); margin-bottom: 0.3rem; }
   .meta-item span { font-size: 0.92rem; color: var(--text); }
 
-  /* ── RESEARCH ── */
+  /* RESEARCH */
   #research { background: var(--paper); }
-  .pub-card {
-    border: 1px solid var(--border);
-    padding: 2rem; background: var(--white);
-    margin-bottom: 1.5rem;
-    display: grid; grid-template-columns: auto 1fr;
-    gap: 1.5rem; align-items: start;
-  }
-  .pub-year {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem; font-weight: 600;
-    color: var(--teal); min-width: 48px;
-    padding-top: 0.15rem;
-  }
-  .pub-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem; font-weight: 600;
-    color: var(--navy); margin-bottom: 0.4rem;
-    line-height: 1.4;
-  }
+  .pub-card { border: 1px solid var(--border); padding: 2rem; background: var(--white); margin-bottom: 1.5rem; display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start; }
+  .pub-year { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--teal); min-width: 48px; padding-top: 0.15rem; }
+  .pub-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; line-height: 1.4; }
   .pub-meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.6rem; }
   .pub-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.7rem; }
-  .tag {
-    font-size: 0.72rem; letter-spacing: 0.06em;
-    text-transform: uppercase; font-weight: 500;
-    padding: 0.25rem 0.65rem;
-    background: var(--sand); color: var(--teal);
-    border: 1px solid var(--border);
-  }
-  .tag-doi {
-    font-size: 0.72rem; letter-spacing: 0.02em;
-    padding: 0.25rem 0.65rem;
-    background: var(--navy); color: var(--white);
-    text-decoration: none; transition: background 0.2s;
-  }
+  .tag { font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; padding: 0.25rem 0.65rem; background: var(--sand); color: var(--teal); border: 1px solid var(--border); }
+  .tag-doi { font-size: 0.72rem; padding: 0.25rem 0.65rem; background: var(--navy); color: var(--white); text-decoration: none; transition: background 0.2s; }
   .tag-doi:hover { background: var(--teal); }
-
-  .interests-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 1px; background: var(--border);
-    margin-top: 2.5rem; border: 1px solid var(--border);
-  }
-  .interest-item {
-    background: var(--white);
-    padding: 1.5rem 1.8rem;
-  }
-  .interest-item h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem; font-weight: 600;
-    color: var(--navy); margin-bottom: 0.4rem;
-  }
+  .interests-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); margin-top: 2.5rem; border: 1px solid var(--border); }
+  .interest-item { background: var(--white); padding: 1.5rem 1.8rem; }
+  .interest-item h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
   .interest-item p { font-size: 0.85rem; color: var(--muted); }
 
-  /* ── PROJECTS ── */
+  /* PROJECTS */
   #projects { background: var(--white); }
-  .projects-label {
-    font-size: 0.72rem; font-weight: 500;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--muted); margin: 2rem 0 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border);
-  }
+  .projects-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
   .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .project-card {
-    border: 1px solid var(--border);
-    padding: 1.8rem;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-  .project-card:hover {
-    border-color: var(--teal);
-    box-shadow: 0 4px 20px rgba(42,107,107,0.08);
-  }
-  .project-card h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem; font-weight: 600;
-    color: var(--navy); margin-bottom: 0.5rem;
-  }
+  .project-card { border: 1px solid var(--border); padding: 1.8rem; transition: border-color 0.2s, box-shadow 0.2s; }
+  .project-card:hover { border-color: var(--teal); box-shadow: 0 4px 20px rgba(42,107,107,0.08); }
+  .project-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
   .project-card p { font-size: 0.88rem; color: #4b5563; margin-bottom: 1rem; line-height: 1.6; }
-  .project-links { display: flex; gap: 1rem; }
-  .project-links a {
-    font-size: 0.75rem; font-weight: 500;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--teal); text-decoration: none;
-    border-bottom: 1px solid var(--teal);
-    padding-bottom: 1px; transition: opacity 0.2s;
-  }
+  .project-links a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal); text-decoration: none; border-bottom: 1px solid var(--teal); padding-bottom: 1px; transition: opacity 0.2s; }
   .project-links a:hover { opacity: 0.7; }
 
-  /* ── SKILLS ── */
+  /* SKILLS */
   #skills { background: var(--navy); }
   #skills .section-label { color: var(--teal-lt); }
   #skills .section-title { color: var(--white); }
   .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
-  .skill-group h4 {
-    font-size: 0.72rem; font-weight: 500;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--teal-lt); margin-bottom: 1rem;
-    padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
+  .skill-group h4 { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal-lt); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
   .skill-list { list-style: none; }
-  .skill-list li {
-    font-size: 0.88rem; color: rgba(255,255,255,0.75);
-    padding: 0.35rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    display: flex; align-items: center; gap: 0.6rem;
-  }
-  .skill-list li::before {
-    content: '';
-    width: 5px; height: 5px;
-    background: var(--teal-lt);
-    flex-shrink: 0;
-  }
+  .skill-list li { font-size: 0.88rem; color: rgba(255,255,255,0.75); padding: 0.35rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 0.6rem; }
+  .skill-list li::before { content: ''; width: 5px; height: 5px; background: var(--teal-lt); flex-shrink: 0; }
 
-  /* ── TEACHING ── */
+  /* TEACHING */
   #teaching { background: var(--paper); }
   .teaching-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .teaching-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    padding: 2rem;
-  }
-  .teaching-card .role {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem; font-weight: 600;
-    color: var(--navy); margin-bottom: 0.3rem;
-  }
-  .teaching-card .org {
-    font-size: 0.83rem; color: var(--teal);
-    font-weight: 500; margin-bottom: 0.2rem;
-  }
-  .teaching-card .period {
-    font-size: 0.78rem; color: var(--muted);
-    margin-bottom: 1rem;
-  }
+  .teaching-card { background: var(--white); border: 1px solid var(--border); padding: 2rem; }
+  .teaching-card .role { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--navy); margin-bottom: 0.3rem; }
+  .teaching-card .org { font-size: 0.83rem; color: var(--teal); font-weight: 500; margin-bottom: 0.2rem; }
+  .teaching-card .period { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
   .teaching-card p { font-size: 0.88rem; color: #4b5563; line-height: 1.65; }
 
-  /* ── HONORS ── */
+  /* HONORS */
   #honors { background: var(--white); }
   .honors-list { list-style: none; }
-  .honors-list li {
-    display: grid; grid-template-columns: auto 1fr;
-    gap: 1.5rem; align-items: start;
-    padding: 1.2rem 0;
-    border-bottom: 1px solid var(--border);
-  }
+  .honors-list li { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start; padding: 1.2rem 0; border-bottom: 1px solid var(--border); }
   .honors-list li:first-child { border-top: 1px solid var(--border); }
-  .honor-year {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.95rem; color: var(--muted);
-    min-width: 40px; padding-top: 0.1rem;
-  }
-  .honor-content strong {
-    display: block; font-size: 0.93rem;
-    font-weight: 500; color: var(--navy);
-    margin-bottom: 0.2rem;
-  }
+  .honor-year { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: var(--muted); min-width: 40px; padding-top: 0.1rem; }
+  .honor-content strong { display: block; font-size: 0.93rem; font-weight: 500; color: var(--navy); margin-bottom: 0.2rem; }
   .honor-content span { font-size: 0.83rem; color: var(--muted); }
 
-  /* ── CONTACT ── */
+  /* CONTACT */
   #contact { background: var(--sand); }
-  .contact-inner {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 4rem; align-items: start;
-  }
-  .contact-left p {
-    font-size: 0.95rem; color: #374151;
-    margin-bottom: 1rem; line-height: 1.75;
-  }
+  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .contact-left p { font-size: 0.95rem; color: #374151; margin-bottom: 1rem; line-height: 1.75; }
   .contact-links { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.5rem; }
-  .contact-link {
-    display: flex; align-items: center; gap: 0.8rem;
-    font-size: 0.88rem; color: var(--text);
-    text-decoration: none; transition: color 0.2s;
-  }
+  .contact-link { display: flex; align-items: center; gap: 0.8rem; font-size: 0.88rem; color: var(--text); text-decoration: none; transition: color 0.2s; }
   .contact-link:hover { color: var(--teal); }
-  .contact-link-icon {
-    width: 32px; height: 32px;
-    background: var(--navy); color: var(--white);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.8rem; flex-shrink: 0;
-  }
-  .contact-right {}
-  .availability-box {
-    background: var(--white);
-    border: 1px solid var(--border);
-    padding: 2rem;
-  }
-  .availability-box h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem; font-weight: 600;
-    color: var(--navy); margin-bottom: 1rem;
-  }
-  .avail-item {
-    display: flex; align-items: flex-start; gap: 0.8rem;
-    margin-bottom: 0.8rem; font-size: 0.88rem; color: #374151;
-  }
-  .avail-dot {
-    width: 8px; height: 8px; background: var(--teal);
-    flex-shrink: 0; margin-top: 0.45rem;
-  }
-  .schedule-btn {
-    display: block; margin-top: 1.5rem;
-    padding: 0.75rem 1.5rem; text-align: center;
-    background: var(--teal); color: var(--white);
-    font-size: 0.8rem; font-weight: 500;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    text-decoration: none; transition: background 0.2s;
-  }
+  .contact-link-icon { width: 32px; height: 32px; background: var(--navy); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0; }
+  .availability-box { background: var(--white); border: 1px solid var(--border); padding: 2rem; }
+  .availability-box h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--navy); margin-bottom: 1rem; }
+  .avail-item { display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 0.8rem; font-size: 0.88rem; color: #374151; }
+  .avail-dot { width: 8px; height: 8px; background: var(--teal); flex-shrink: 0; margin-top: 0.45rem; }
+  .schedule-btn { display: block; margin-top: 1.5rem; padding: 0.75rem 1.5rem; text-align: center; background: var(--teal); color: var(--white); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
   .schedule-btn:hover { background: var(--navy); }
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--navy); color: rgba(255,255,255,0.4);
-    padding: 2rem; text-align: center;
-    font-size: 0.8rem; letter-spacing: 0.04em;
-  }
+  /* FOOTER */
+  footer { background: var(--navy); color: rgba(255,255,255,0.4); padding: 2rem; text-align: center; font-size: 0.8rem; letter-spacing: 0.04em; }
 
-  /* ── RESPONSIVE ── */
+  /* RESPONSIVE */
   @media (max-width: 768px) {
     .nav-links { display: none; }
     .nav-toggle { display: block; }
-    .nav-links.open {
-      display: flex; flex-direction: column;
-      position: absolute; top: 64px; left: 0; right: 0;
-      background: var(--paper); border-bottom: 1px solid var(--border);
-      padding: 1rem 2rem; gap: 1rem;
-    }
+    .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--border); padding: 1rem 2rem; gap: 1rem; }
     #hero::after { display: none; }
     .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
     .hero-right { flex-direction: row; flex-wrap: wrap; }
     .hero-stat-card { flex: 1; min-width: 140px; }
-    .about-grid { grid-template-columns: 1fr; }
-    .interests-grid { grid-template-columns: 1fr; }
-    .projects-grid { grid-template-columns: 1fr; }
+    .about-grid, .interests-grid, .projects-grid, .teaching-grid, .contact-inner { grid-template-columns: 1fr; }
     .skills-grid { grid-template-columns: 1fr 1fr; }
-    .teaching-grid { grid-template-columns: 1fr; }
-    .contact-inner { grid-template-columns: 1fr; }
     .pub-card { grid-template-columns: 1fr; gap: 0.5rem; }
   }
   @media (max-width: 480px) {
@@ -421,17 +163,13 @@
     .hero-btns { flex-direction: column; }
   }
 
-  /* ── SCROLL ANIMATIONS ── */
-  .fade-up {
-    opacity: 0; transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
+  /* ANIMATIONS */
+  .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="navbar">
   <a href="#hero" class="nav-brand">Shamas Liaqat</a>
   <ul class="nav-links" id="navLinks">
@@ -447,19 +185,28 @@
   </button>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
     <div class="hero-left fade-up">
-      <span class="hero-tag">Applied Economist &amp; Quantitative Researcher</span>
-      <h1 class="hero-name">Shamas<br>Liaqat</h1>
-      <p class="hero-title">Agricultural Economics · Causal Inference · Python &amp; Data Analysis</p>
+
+      <!-- PHOTO + NAME TAG — correctly closed -->
+      <div class="hero-profile">
+        <img src="images/1735743565157.jpeg" alt="Shamas Liaqat" class="hero-photo">
+        <div>
+          <div class="hero-photo-name">Shamas Liaqat</div>
+          <span class="hero-tag">Applied Economist &amp; Quantitative Researcher</span>
+        </div>
+      </div>
+
+      <h1 class="hero-name">Agricultural<br>Economics<br>&amp; Data.</h1>
+      <p class="hero-title">Causal Inference · Econometrics · Python &amp; Data Analysis</p>
       <p class="hero-desc">I study agricultural systems, rural livelihoods, and development policy using causal inference, econometrics, and modern data science tools. Currently pursuing PhD opportunities in agricultural, environmental, or development economics.</p>
       <div class="hero-btns">
         <a href="#research" class="btn-primary">View Research</a>
         <a href="#contact" class="btn-secondary">Get in Touch</a>
       </div>
     </div>
+
     <div class="hero-right fade-up">
       <div class="hero-stat-card">
         <div class="stat-number">3.78</div>
@@ -481,7 +228,6 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="container">
     <p class="section-label fade-up">About</p>
@@ -494,37 +240,20 @@
         <p>I am currently pursuing PhD opportunities in agricultural, environmental, or development economics. Alongside academic work, I am open to remote research, data analysis, and applied economic consulting engagements.</p>
       </div>
       <div class="about-meta fade-up">
-        <div class="meta-item">
-          <strong>Education</strong>
-          <span>MSc (Hons) Agricultural Economics, UAF · CGPA 3.78/4.0<br>BSc (Hons) Agriculture &amp; Resource Economics, UAF · CGPA 3.70/4.0 · Bronze Medal</span>
-        </div>
-        <div class="meta-item">
-          <strong>Current Position</strong>
-          <span>Lecturer in Economics<br>Higher Education Department, Punjab, Pakistan</span>
-        </div>
-        <div class="meta-item">
-          <strong>Research Focus</strong>
-          <span>Causal Inference · Agricultural Policy · Rural Household Welfare · Climate &amp; Development Economics</span>
-        </div>
-        <div class="meta-item">
-          <strong>Languages</strong>
-          <span>English (Fluent) · Urdu (Native) · German (Beginner)</span>
-        </div>
-        <div class="meta-item">
-          <strong>Location</strong>
-          <span>Narowal, Punjab, Pakistan · Open to remote work</span>
-        </div>
+        <div class="meta-item"><strong>Education</strong><span>MSc (Hons) Agricultural Economics, UAF · CGPA 3.78/4.0<br>BSc (Hons) Agriculture &amp; Resource Economics, UAF · CGPA 3.70/4.0 · Bronze Medal</span></div>
+        <div class="meta-item"><strong>Current Position</strong><span>Lecturer in Economics<br>Higher Education Department, Punjab, Pakistan</span></div>
+        <div class="meta-item"><strong>Research Focus</strong><span>Causal Inference · Agricultural Policy · Rural Household Welfare · Climate &amp; Development Economics</span></div>
+        <div class="meta-item"><strong>Languages</strong><span>English (Fluent) · Urdu (Native) · German (Beginner)</span></div>
+        <div class="meta-item"><strong>Location</strong><span>Narowal, Punjab, Pakistan · Open to remote work</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- RESEARCH -->
 <section id="research">
   <div class="container">
     <p class="section-label fade-up">Research</p>
     <h2 class="section-title fade-up">Publications &amp; Research Interests</h2>
-
     <div class="fade-up">
       <div class="pub-card">
         <div class="pub-year">2022</div>
@@ -539,11 +268,10 @@
           </div>
         </div>
       </div>
-
       <div class="pub-card">
         <div class="pub-year">2023</div>
         <div>
-          <div class="pub-title">Impact of Non-farm Work on Agricultural Productivity and Household Income of Farmers <em style="font-size:0.85rem; font-weight:400; color:var(--muted)">(MSc Thesis)</em></div>
+          <div class="pub-title">Impact of Non-farm Work on Agricultural Productivity and Household Income of Farmers <em style="font-size:0.85rem;font-weight:400;color:var(--muted)">(MSc Thesis)</em></div>
           <div class="pub-meta">University of Agriculture, Faisalabad · Supervised primary field research</div>
           <div class="pub-tags">
             <span class="tag">Propensity Score Matching</span>
@@ -554,88 +282,55 @@
         </div>
       </div>
     </div>
-
     <div class="fade-up">
-      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--navy); margin: 3rem 0 1rem;">Research Interests</h3>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--navy);margin:3rem 0 1rem;">Research Interests</h3>
       <div class="interests-grid">
-        <div class="interest-item">
-          <h4>Climate Change &amp; Agriculture</h4>
-          <p>How climate variability affects crop yields, farmer adaptation, and food system resilience in developing economies.</p>
-        </div>
-        <div class="interest-item">
-          <h4>Rural Poverty &amp; Household Welfare</h4>
-          <p>Causal evaluation of non-farm income, social programs, and policy interventions on smallholder welfare.</p>
-        </div>
-        <div class="interest-item">
-          <h4>Food Security &amp; Policy Analysis</h4>
-          <p>Supply chains, price volatility, and governance structures determining food access in rural regions.</p>
-        </div>
-        <div class="interest-item">
-          <h4>Land Use &amp; Environmental Economics</h4>
-          <p>Land tenure, resource allocation, and economic valuation of ecosystem services in agricultural landscapes.</p>
-        </div>
+        <div class="interest-item"><h4>Climate Change &amp; Agriculture</h4><p>How climate variability affects crop yields, farmer adaptation, and food system resilience in developing economies.</p></div>
+        <div class="interest-item"><h4>Rural Poverty &amp; Household Welfare</h4><p>Causal evaluation of non-farm income, social programs, and policy interventions on smallholder welfare.</p></div>
+        <div class="interest-item"><h4>Food Security &amp; Policy Analysis</h4><p>Supply chains, price volatility, and governance structures determining food access in rural regions.</p></div>
+        <div class="interest-item"><h4>Land Use &amp; Environmental Economics</h4><p>Land tenure, resource allocation, and economic valuation of ecosystem services in agricultural landscapes.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="container">
     <p class="section-label fade-up">Projects</p>
     <h2 class="section-title fade-up">Selected Work</h2>
-
     <p class="projects-label fade-up">Research &amp; Data Projects</p>
     <div class="projects-grid fade-up">
       <div class="project-card">
         <h4>Agricultural Structural Transformation Analysis</h4>
         <p>Data-driven analysis of agricultural structural transformation using World Bank indicators from 1961 to 2023. Explores long-run shifts in employment, output, and productivity across developing economies using Python.</p>
-        <div class="pub-tags" style="margin-bottom:1rem;">
-          <span class="tag">Python</span><span class="tag">World Bank Data</span><span class="tag">Development Economics</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Shamas245/agricultural-structural-transformation" target="_blank">GitHub →</a>
-        </div>
+        <div class="pub-tags" style="margin-bottom:1rem;"><span class="tag">Python</span><span class="tag">World Bank Data</span><span class="tag">Development Economics</span></div>
+        <div class="project-links"><a href="https://github.com/Shamas245/agricultural-structural-transformation" target="_blank">GitHub →</a></div>
       </div>
       <div class="project-card">
         <h4>DeepAgro — Agricultural AI Recommendation System</h4>
         <p>A multi-agent AI system providing intelligent agricultural recommendations by analyzing farm conditions, environmental data, and economic factors. Built to demonstrate how modern AI tools can assist smallholder decision-making.</p>
-        <div class="pub-tags" style="margin-bottom:1rem;">
-          <span class="tag">Python</span><span class="tag">Multi-agent AI</span><span class="tag">Agricultural Systems</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Shamas245/DeepAgro" target="_blank">GitHub →</a>
-        </div>
+        <div class="pub-tags" style="margin-bottom:1rem;"><span class="tag">Python</span><span class="tag">Multi-agent AI</span><span class="tag">Agricultural Systems</span></div>
+        <div class="project-links"><a href="https://github.com/Shamas245/DeepAgro" target="_blank">GitHub →</a></div>
       </div>
     </div>
-
     <p class="projects-label fade-up" style="margin-top:2.5rem;">Teaching &amp; Educational Tools</p>
     <div class="projects-grid fade-up">
       <div class="project-card">
         <h4>Basic Python for Economics</h4>
         <p>An open-access beginner notebook series designed to help economics students and professionals learn Python through practical, real-world economic examples. Developed from classroom experience.</p>
-        <div class="pub-tags" style="margin-bottom:1rem;">
-          <span class="tag">Python</span><span class="tag">Education</span><span class="tag">Open Access</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Shamas245/Basic_Python_for_Economics" target="_blank">GitHub →</a>
-        </div>
+        <div class="pub-tags" style="margin-bottom:1rem;"><span class="tag">Python</span><span class="tag">Education</span><span class="tag">Open Access</span></div>
+        <div class="project-links"><a href="https://github.com/Shamas245/Basic_Python_for_Economics" target="_blank">GitHub →</a></div>
       </div>
       <div class="project-card">
         <h4>Meeting Summarizer</h4>
-        <p>A Streamlit-based productivity application that processes audio, video, or transcript files to generate structured meeting summaries and action items — demonstrating applied NLP in professional contexts.</p>
-        <div class="pub-tags" style="margin-bottom:1rem;">
-          <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">NLP</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Shamas245/meeting_summarizer" target="_blank">GitHub →</a>
-        </div>
+        <p>A Streamlit-based productivity application that processes audio, video, or transcript files to generate structured meeting summaries and action items.</p>
+        <div class="pub-tags" style="margin-bottom:1rem;"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">NLP</span></div>
+        <div class="project-links"><a href="https://github.com/Shamas245/meeting_summarizer" target="_blank">GitHub →</a></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="container">
     <p class="section-label fade-up">Expertise</p>
@@ -678,7 +373,6 @@
   </div>
 </section>
 
-<!-- TEACHING -->
 <section id="teaching">
   <div class="container">
     <p class="section-label fade-up">Teaching</p>
@@ -688,78 +382,34 @@
         <div class="role">Lecturer in Economics</div>
         <div class="org">Higher Education Department — Punjab, Pakistan</div>
         <div class="period">January 2023 — Present</div>
-        <p>Teaches applied microeconomics and production theory, including incentive structures, decision-making under uncertainty, and market behaviour. Develops activity-based learning to build analytical and critical thinking. Selected through the Punjab Public Service Commission — 46 appointed from 2,000+ applicants.</p>
+        <p>Teaches applied microeconomics and production theory, including incentive structures, decision-making under uncertainty, and market behaviour. Selected through the Punjab Public Service Commission — 46 appointed from 2,000+ applicants.</p>
       </div>
       <div class="teaching-card">
         <div class="role">Section Leader</div>
         <div class="org">Stanford University: Code in Place — Remote</div>
         <div class="period">April 2025 — June 2025</div>
-        <p>Facilitated live Python programming sessions for 20+ international students. Mentored participants in logical reasoning and computational thinking within a globally inclusive learning environment. One of a select group of educators chosen for this program from applicants worldwide.</p>
+        <p>Facilitated live Python programming sessions for 20+ international students. Mentored participants in logical reasoning and computational thinking within a globally inclusive learning environment.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HONORS -->
 <section id="honors">
   <div class="container">
     <p class="section-label fade-up">Recognition</p>
     <h2 class="section-title fade-up">Honors &amp; Awards</h2>
     <ul class="honors-list fade-up">
-      <li>
-        <span class="honor-year">2017–21</span>
-        <div class="honor-content">
-          <strong>Bronze Medal — Ranked 3rd out of 85 Students</strong>
-          <span>BSc (Hons) Agriculture &amp; Resource Economics · University of Agriculture, Faisalabad</span>
-        </div>
-      </li>
-      <li>
-        <span class="honor-year">2022</span>
-        <div class="honor-content">
-          <strong>Lecturer (Economics) — Punjab Public Service Commission</strong>
-          <span>Competitively appointed — 46 selected from 2,000+ applicants across Punjab</span>
-        </div>
-      </li>
-      <li>
-        <span class="honor-year">2022</span>
-        <div class="honor-content">
-          <strong>World Bank ESF in Practice Training</strong>
-          <span>Environmental &amp; Social Framework training for academic institutions · Lahore, Pakistan</span>
-        </div>
-      </li>
-      <li>
-        <span class="honor-year">2024</span>
-        <div class="honor-content">
-          <strong>NASA Space Apps Challenge</strong>
-          <span>Global participation — 93,000+ participants across 160+ countries</span>
-        </div>
-      </li>
-      <li>
-        <span class="honor-year">2025</span>
-        <div class="honor-content">
-          <strong>Section Leader — Stanford University: Code in Place</strong>
-          <span>Selected to lead international programming sections for Stanford's global Python education program</span>
-        </div>
-      </li>
-      <li>
-        <span class="honor-year">2025</span>
-        <div class="honor-content">
-          <strong>AERE–GSE Professional Development Panel</strong>
-          <span>Association of Environmental &amp; Resource Economists — Panel on novel datasets and contemporary empirical skillsets</span>
-        </div>
-      </li>
-      <li>
-        <span class="honor-year">–</span>
-        <div class="honor-content">
-          <strong>Harvard CS50x — All 9 Problem Sets Completed</strong>
-          <span>Harvard University's introduction to computer science — full course completion</span>
-        </div>
-      </li>
+      <li><span class="honor-year">2017–21</span><div class="honor-content"><strong>Bronze Medal — Ranked 3rd out of 85 Students</strong><span>BSc (Hons) Agriculture &amp; Resource Economics · University of Agriculture, Faisalabad</span></div></li>
+      <li><span class="honor-year">2022</span><div class="honor-content"><strong>Lecturer (Economics) — Punjab Public Service Commission</strong><span>Competitively appointed — 46 selected from 2,000+ applicants across Punjab</span></div></li>
+      <li><span class="honor-year">2022</span><div class="honor-content"><strong>World Bank ESF in Practice Training</strong><span>Environmental &amp; Social Framework training for academic institutions · Lahore, Pakistan</span></div></li>
+      <li><span class="honor-year">2024</span><div class="honor-content"><strong>NASA Space Apps Challenge</strong><span>Global participation — 93,000+ participants across 160+ countries</span></div></li>
+      <li><span class="honor-year">2025</span><div class="honor-content"><strong>Section Leader — Stanford University: Code in Place</strong><span>Selected to lead international programming sections for Stanford's global Python education program</span></div></li>
+      <li><span class="honor-year">2025</span><div class="honor-content"><strong>AERE–GSE Professional Development Panel</strong><span>Association of Environmental &amp; Resource Economists — Panel on novel datasets and contemporary empirical skillsets</span></div></li>
+      <li><span class="honor-year">–</span><div class="honor-content"><strong>Harvard CS50x — All 9 Problem Sets Completed</strong><span>Harvard University's introduction to computer science — full course completion</span></div></li>
     </ul>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <p class="section-label fade-up">Contact</p>
@@ -769,43 +419,19 @@
         <p>I welcome inquiries related to PhD program opportunities, research collaborations, and remote data analysis or applied economic consulting work.</p>
         <p>Whether you are a prospective supervisor, a research institution, or an organization seeking rigorous quantitative analysis, I am happy to discuss how I can contribute.</p>
         <div class="contact-links">
-          <a href="mailto:shamasliaqat780@gmail.com" class="contact-link">
-            <span class="contact-link-icon">✉</span>
-            shamasliaqat780@gmail.com
-          </a>
-          <a href="https://linkedin.com/in/shamasliaqat" target="_blank" class="contact-link">
-            <span class="contact-link-icon">in</span>
-            linkedin.com/in/shamasliaqat
-          </a>
-          <a href="https://github.com/Shamas245" target="_blank" class="contact-link">
-            <span class="contact-link-icon">gh</span>
-            github.com/Shamas245
-          </a>
-          <a href="tel:+923025157841" class="contact-link">
-            <span class="contact-link-icon">☎</span>
-            +92-302-5157841
-          </a>
+          <a href="mailto:shamasliaqat780@gmail.com" class="contact-link"><span class="contact-link-icon">✉</span>shamasliaqat780@gmail.com</a>
+          <a href="https://linkedin.com/in/shamasliaqat" target="_blank" class="contact-link"><span class="contact-link-icon">in</span>linkedin.com/in/shamasliaqat</a>
+          <a href="https://github.com/Shamas245" target="_blank" class="contact-link"><span class="contact-link-icon">gh</span>github.com/Shamas245</a>
+          <a href="tel:+923025157841" class="contact-link"><span class="contact-link-icon">☎</span>+92-302-5157841</a>
         </div>
       </div>
       <div class="contact-right">
         <div class="availability-box">
           <h4>Currently Open To</h4>
-          <div class="avail-item">
-            <span class="avail-dot"></span>
-            <span>PhD applications in Agricultural, Environmental, or Development Economics</span>
-          </div>
-          <div class="avail-item">
-            <span class="avail-dot"></span>
-            <span>Research assistant or data analyst roles at universities and policy institutes</span>
-          </div>
-          <div class="avail-item">
-            <span class="avail-dot"></span>
-            <span>Remote consulting in quantitative data analysis and econometrics</span>
-          </div>
-          <div class="avail-item">
-            <span class="avail-dot"></span>
-            <span>Collaborative research projects in agricultural or development economics</span>
-          </div>
+          <div class="avail-item"><span class="avail-dot"></span><span>PhD applications in Agricultural, Environmental, or Development Economics</span></div>
+          <div class="avail-item"><span class="avail-dot"></span><span>Research assistant or data analyst roles at universities and policy institutes</span></div>
+          <div class="avail-item"><span class="avail-dot"></span><span>Remote consulting in quantitative data analysis and econometrics</span></div>
+          <div class="avail-item"><span class="avail-dot"></span><span>Collaborative research projects in agricultural or development economics</span></div>
           <a href="https://calendly.com/shamasliaqat245/30min" target="_blank" class="schedule-btn">Schedule a Call</a>
         </div>
       </div>
@@ -813,19 +439,15 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>© 2026 Shamas Liaqat · Applied Economist · Narowal, Punjab, Pakistan</p>
 </footer>
 
 <script>
-  // Mobile nav toggle
   const toggle = document.getElementById('navToggle');
   const links  = document.getElementById('navLinks');
   toggle.addEventListener('click', () => links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
-
-  // Scroll-triggered fade-up
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.12 });

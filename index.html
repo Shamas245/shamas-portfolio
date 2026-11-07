@@ -1,1110 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shamas Liaqat — Applied Economist & Researcher</title>
-<meta name="description" content="Applied Economist specializing in causal inference, agricultural economics, and quantitative policy research. Lecturer in Economics. PhD applicant and open to research collaborations.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-/* ── VARIABLES ── */
-:root {
-  --ink:       #111820;
-  --ink2:      #2c3a47;
-  --slate:     #4e5d6c;
-  --muted:     #8a97a3;
-  --rule:      #dde2e8;
-  --fog:       #f3f5f7;
-  --paper:     #f9fafb;
-  --white:     #ffffff;
-  --forest:    #1b5e45;
-  --forest2:   #236b50;
-  --forest-lt: #e6f2ed;
-  --gold:      #7a5c1e;
-  --gold-lt:   #f5efe0;
-}
-
-/* ── RESET ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--white);
-  color: var(--ink);
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-h1,h2,h3,h4,h5 { font-family: 'Lora', serif; line-height: 1.25; }
-a { color: inherit; text-decoration: none; }
-img { display: block; max-width: 100%; }
-
-/* ── UTILITIES ── */
-.wrap { max-width: 1040px; margin: 0 auto; padding: 0 2.5rem; }
-.section { padding: 5rem 0; }
-.sec-kicker {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.68rem; font-weight: 600;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--forest); margin-bottom: 0.6rem;
-  display: block;
-}
-.sec-title {
-  font-size: clamp(1.6rem, 3vw, 2rem);
-  font-weight: 600; color: var(--ink);
-  margin-bottom: 2.5rem;
-}
-.divider {
-  width: 40px; height: 2px;
-  background: var(--forest);
-  margin: 1rem 0 1.5rem;
-}
-
-/* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  height: 62px;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 2.5rem;
-  background: rgba(249,250,251,0.97);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--rule);
-}
-.nav-brand {
-  font-family: 'Lora', serif;
-  font-size: 1.05rem; font-weight: 600;
-  color: var(--ink); letter-spacing: 0.01em;
-}
-.nav-menu { display: flex; gap: 2rem; list-style: none; }
-.nav-menu a {
-  font-size: 0.76rem; font-weight: 500;
-  color: var(--slate); letter-spacing: 0.09em;
-  text-transform: uppercase; transition: color 0.2s;
-}
-.nav-menu a:hover { color: var(--forest); }
-.nav-toggle {
-  display: none; flex-direction: column; gap: 5px;
-  cursor: pointer; background: none; border: none; padding: 4px;
-}
-.nav-toggle span {
-  display: block; width: 22px; height: 1.5px;
-  background: var(--ink); transition: all 0.3s;
-}
-
-/* ── HERO ── */
-#hero {
-  min-height: 100vh;
-  display: grid; grid-template-columns: 55% 45%;
-  padding-top: 62px;
-}
-.hero-l {
-  background: var(--ink);
-  padding: 5rem 3.5rem 5rem 2.5rem;
-  display: flex; flex-direction: column; justify-content: center;
-}
-.hero-photo {
-  width: 76px; height: 76px;
-  border-radius: 50%; overflow: hidden;
-  border: 2px solid var(--forest2);
-  margin-bottom: 2.2rem; flex-shrink: 0;
-}
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(10%); }
-.hero-name {
-  font-family: 'Lora', serif;
-  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
-  font-weight: 700; color: var(--white);
-  line-height: 1.08; margin-bottom: 0.6rem;
-}
-.hero-subtitle {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.82rem; font-weight: 500;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
-  margin-bottom: 1.8rem;
-}
-.hero-desc {
-  font-size: 1rem; color: rgba(255,255,255,0.72);
-  line-height: 1.8; max-width: 420px;
-  margin-bottom: 2.5rem;
-}
-.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-.btn-w {
-  padding: 0.65rem 1.6rem;
-  background: var(--white); color: var(--ink);
-  font-size: 0.76rem; font-weight: 600;
-  letter-spacing: 0.09em; text-transform: uppercase;
-  transition: background 0.2s, color 0.2s;
-  border: 1px solid transparent;
-}
-.btn-w:hover { background: var(--forest2); color: var(--white); }
-.btn-ol {
-  padding: 0.65rem 1.6rem;
-  border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.8);
-  font-size: 0.76rem; font-weight: 600;
-  letter-spacing: 0.09em; text-transform: uppercase;
-  transition: all 0.2s;
-}
-.btn-ol:hover { border-color: var(--white); color: var(--white); }
-
-.hero-r {
-  background: var(--fog);
-  padding: 5rem 2.5rem 5rem 3.5rem;
-  display: flex; flex-direction: column; justify-content: center;
-  gap: 0;
-}
-.hero-fact {
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--rule);
-}
-.hero-fact:first-child { border-top: 1px solid var(--rule); }
-.fact-val {
-  font-family: 'Lora', serif;
-  font-size: 1.9rem; font-weight: 700;
-  color: var(--forest); line-height: 1;
-  margin-bottom: 0.3rem;
-}
-.fact-lbl { font-size: 0.88rem; color: var(--ink2); font-weight: 500; }
-.fact-sub { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
-
-/* ── ABOUT ── */
-#about { background: var(--white); }
-.about-grid {
-  display: grid; grid-template-columns: 1fr 300px;
-  gap: 4.5rem; align-items: start;
-}
-.about-body p {
-  font-size: 0.97rem; color: var(--ink2);
-  line-height: 1.85; margin-bottom: 1.1rem;
-}
-.about-body p:last-child { margin-bottom: 0; }
-.about-aside { display: flex; flex-direction: column; }
-.aside-block {
-  padding: 0.9rem 0;
-  border-bottom: 1px solid var(--rule);
-}
-.aside-block:first-child { border-top: 1px solid var(--rule); }
-.aside-lbl {
-  font-size: 0.67rem; font-weight: 600;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 0.3rem;
-}
-.aside-val {
-  font-size: 0.88rem; color: var(--ink2); line-height: 1.55;
-}
-
-/* ── EDUCATION ── */
-#education { background: var(--fog); }
-.edu-list { display: flex; flex-direction: column; gap: 0; }
-.edu-item {
-  display: grid; grid-template-columns: 120px 1fr;
-  gap: 2.5rem; padding: 2.2rem 0;
-  border-bottom: 1px solid var(--rule);
-  align-items: start;
-}
-.edu-item:first-child { border-top: 1px solid var(--rule); }
-.edu-years {
-  font-family: 'Lora', serif;
-  font-size: 0.92rem; font-weight: 500;
-  color: var(--muted); padding-top: 0.2rem;
-  line-height: 1.4;
-}
-.edu-degree {
-  font-family: 'Lora', serif;
-  font-size: 1.15rem; font-weight: 600;
-  color: var(--ink); margin-bottom: 0.2rem;
-}
-.edu-inst {
-  font-size: 0.88rem; color: var(--forest2);
-  font-weight: 500; margin-bottom: 0.6rem;
-}
-.edu-cgpa {
-  display: inline-block;
-  font-size: 0.72rem; font-weight: 600;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  background: var(--forest-lt); color: var(--forest);
-  padding: 0.2rem 0.65rem; margin-bottom: 0.8rem;
-}
-.edu-badge {
-  display: inline-block;
-  font-size: 0.72rem; font-weight: 600;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  background: var(--gold-lt); color: var(--gold);
-  padding: 0.2rem 0.65rem; margin-left: 0.5rem; margin-bottom: 0.8rem;
-}
-.edu-details { font-size: 0.88rem; color: var(--slate); line-height: 1.7; }
-.edu-details strong { color: var(--ink2); font-weight: 600; }
-
-/* ── RESEARCH ── */
-#research { background: var(--white); }
-.pub-entry {
-  display: grid; grid-template-columns: 64px 1fr;
-  gap: 2rem; padding: 2rem 0;
-  border-bottom: 1px solid var(--rule);
-  align-items: start;
-}
-.pub-entry:first-child { border-top: 1px solid var(--rule); }
-.pub-yr {
-  font-family: 'Lora', serif;
-  font-size: 1rem; font-weight: 600;
-  color: var(--muted); padding-top: 0.2rem;
-}
-.pub-t {
-  font-family: 'Lora', serif;
-  font-size: 1.08rem; font-weight: 600;
-  color: var(--ink); margin-bottom: 0.35rem; line-height: 1.45;
-}
-.pub-auth { font-size: 0.84rem; color: var(--slate); margin-bottom: 0.2rem; }
-.pub-jour { font-size: 0.84rem; color: var(--slate); font-style: italic; margin-bottom: 0.75rem; }
-.pub-chips { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-.chip {
-  font-size: 0.67rem; font-weight: 600;
-  letter-spacing: 0.07em; text-transform: uppercase;
-  padding: 0.22rem 0.6rem;
-  background: var(--forest-lt); color: var(--forest);
-}
-.chip-ink {
-  font-size: 0.67rem; font-weight: 600;
-  letter-spacing: 0.07em;
-  padding: 0.22rem 0.6rem;
-  background: var(--ink); color: var(--white);
-  transition: background 0.2s;
-}
-.chip-ink:hover { background: var(--forest); }
-
-.interests-grid {
-  display: grid; grid-template-columns: repeat(4,1fr);
-  gap: 1px; background: var(--rule);
-  border: 1px solid var(--rule);
-  margin-top: 3rem;
-}
-.int-cell {
-  background: var(--white); padding: 1.5rem 1.4rem;
-}
-.int-cell h4 {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.88rem; font-weight: 600;
-  color: var(--ink); margin-bottom: 0.5rem;
-}
-.int-cell p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
-
-/* ── RESEARCH EXPERIENCE ── */
-#research-exp { background: var(--fog); }
-.rexp-item {
-  padding: 2rem 0;
-  border-bottom: 1px solid var(--rule);
-}
-.rexp-item:first-child { border-top: 1px solid var(--rule); }
-.rexp-header {
-  display: grid; grid-template-columns: 1fr auto;
-  gap: 1rem; align-items: start; margin-bottom: 0.8rem;
-}
-.rexp-role {
-  font-family: 'Lora', serif;
-  font-size: 1.1rem; font-weight: 600; color: var(--ink);
-}
-.rexp-org { font-size: 0.88rem; color: var(--forest2); font-weight: 500; margin-top: 0.15rem; }
-.rexp-period {
-  font-size: 0.75rem; font-weight: 500;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--muted); white-space: nowrap;
-  padding-top: 0.25rem;
-}
-.rexp-body { font-size: 0.9rem; color: var(--slate); line-height: 1.8; }
-.rexp-body ul { padding-left: 1.1rem; margin-top: 0.5rem; }
-.rexp-body li { margin-bottom: 0.45rem; }
-.rexp-body strong { color: var(--ink2); font-weight: 600; }
-
-/* ── TEACHING ── */
-#teaching { background: var(--white); }
-.teach-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-}
-.teach-card {
-  border: 1px solid var(--rule); padding: 2rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-.teach-card:hover {
-  border-color: var(--forest2);
-  box-shadow: 0 4px 20px rgba(27,94,69,0.07);
-}
-.teach-period {
-  font-size: 0.68rem; font-weight: 600;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 0.7rem;
-}
-.teach-role {
-  font-family: 'Lora', serif;
-  font-size: 1.15rem; font-weight: 600;
-  color: var(--ink); margin-bottom: 0.2rem;
-}
-.teach-org {
-  font-size: 0.88rem; color: var(--forest2);
-  font-weight: 500; margin-bottom: 1rem;
-}
-.teach-divider {
-  width: 28px; height: 2px;
-  background: var(--forest); margin-bottom: 1rem;
-}
-.teach-body { font-size: 0.88rem; color: var(--slate); line-height: 1.75; }
-.teach-body ul { padding-left: 1rem; margin-top: 0.6rem; }
-.teach-body li { margin-bottom: 0.4rem; }
-.teach-body strong { color: var(--ink2); font-weight: 600; }
-
-/* ── SKILLS ── */
-#skills { background: var(--ink); }
-#skills .sec-kicker { color: #5da882; }
-#skills .sec-title { color: var(--white); margin-bottom: 3rem; }
-.skills-grid {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  gap: 3rem;
-}
-.skill-cat-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.68rem; font-weight: 600;
-  letter-spacing: 0.16em; text-transform: uppercase;
-  color: #5da882;
-  padding-bottom: 0.7rem;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  margin-bottom: 1.1rem;
-}
-.skill-entries { display: flex; flex-direction: column; gap: 0.55rem; }
-.skill-entry {
-  font-size: 0.9rem; color: rgba(255,255,255,0.72);
-  padding-left: 1rem; position: relative; line-height: 1.5;
-}
-.skill-entry::before {
-  content: '';
-  position: absolute; left: 0; top: 0.58em;
-  width: 4px; height: 4px;
-  background: #5da882; border-radius: 50%;
-}
-
-/* ── PROJECTS ── */
-#projects { background: var(--fog); }
-.proj-cat-label {
-  font-size: 0.68rem; font-weight: 600;
-  letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--muted);
-  padding-bottom: 0.6rem;
-  border-bottom: 1px solid var(--rule);
-  margin-bottom: 1.5rem;
-}
-.proj-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 1.8rem; margin-bottom: 2.5rem;
-}
-.proj-card {
-  background: var(--white);
-  border: 1px solid var(--rule);
-  padding: 1.8rem;
-  display: flex; flex-direction: column;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-.proj-card:hover {
-  border-color: var(--forest2);
-  box-shadow: 0 4px 20px rgba(27,94,69,0.07);
-}
-.proj-name {
-  font-family: 'Lora', serif;
-  font-size: 1.05rem; font-weight: 600;
-  color: var(--ink); margin-bottom: 0.7rem;
-  line-height: 1.35;
-}
-.proj-desc {
-  font-size: 0.88rem; color: var(--slate);
-  line-height: 1.75; margin-bottom: 1.2rem; flex: 1;
-}
-.proj-desc strong { color: var(--ink2); font-weight: 600; }
-.proj-footer {
-  display: flex; align-items: center;
-  justify-content: space-between;
-  padding-top: 1rem;
-  border-top: 1px solid var(--rule);
-  flex-wrap: wrap; gap: 0.5rem;
-}
-.proj-stack { font-size: 0.77rem; color: var(--muted); }
-.proj-link {
-  font-size: 0.72rem; font-weight: 600;
-  letter-spacing: 0.09em; text-transform: uppercase;
-  color: var(--forest); transition: color 0.2s;
-  border-bottom: 1px solid var(--forest); padding-bottom: 1px;
-}
-.proj-link:hover { color: var(--ink); border-color: var(--ink); }
-
-/* ── HONORS ── */
-#honors { background: var(--white); }
-.honors-list { list-style: none; }
-.honor-item {
-  display: grid; grid-template-columns: 72px 1fr;
-  gap: 2rem; padding: 1.3rem 0;
-  border-bottom: 1px solid var(--rule);
-  align-items: start;
-}
-.honor-item:first-child { border-top: 1px solid var(--rule); }
-.honor-yr {
-  font-family: 'Lora', serif;
-  font-size: 0.9rem; color: var(--muted);
-  font-weight: 500; padding-top: 0.1rem;
-}
-.honor-title {
-  font-size: 0.93rem; font-weight: 600;
-  color: var(--ink); margin-bottom: 0.2rem;
-}
-.honor-sub { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
-
-/* ── CONTACT ── */
-#contact { background: var(--fog); }
-.contact-grid {
-  display: grid; grid-template-columns: 1fr 380px;
-  gap: 5rem; align-items: start;
-}
-.contact-intro {
-  font-size: 0.97rem; color: var(--ink2);
-  line-height: 1.85; margin-bottom: 2rem;
-}
-.contact-links { display: flex; flex-direction: column; gap: 0.9rem; }
-.contact-row {
-  display: flex; align-items: center; gap: 1rem;
-  font-size: 0.9rem; color: var(--ink2);
-  transition: color 0.2s;
-}
-.contact-row:hover { color: var(--forest); }
-.c-icon {
-  width: 34px; height: 34px; flex-shrink: 0;
-  background: var(--white); border: 1px solid var(--rule);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.8rem; color: var(--slate);
-}
-.open-box {
-  background: var(--white); border: 1px solid var(--rule);
-  padding: 2rem;
-}
-.open-box h4 {
-  font-family: 'Lora', serif;
-  font-size: 1.1rem; font-weight: 600;
-  color: var(--ink); margin-bottom: 1.2rem;
-}
-.open-row {
-  display: flex; gap: 0.8rem;
-  font-size: 0.88rem; color: var(--slate);
-  line-height: 1.6; margin-bottom: 0.8rem;
-}
-.open-dot {
-  width: 6px; height: 6px; flex-shrink: 0;
-  background: var(--forest); margin-top: 0.52rem;
-}
-.cta {
-  display: block; margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem; text-align: center;
-  background: var(--forest); color: var(--white);
-  font-size: 0.76rem; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  transition: background 0.2s;
-}
-.cta:hover { background: var(--ink); }
-
-/* ── FOOTER ── */
-footer {
-  background: var(--ink);
-  padding: 1.8rem 2.5rem;
-  display: flex; align-items: center;
-  justify-content: space-between; flex-wrap: wrap; gap: 1rem;
-}
-.foot-name {
-  font-family: 'Lora', serif;
-  font-size: 0.88rem; color: rgba(255,255,255,0.35);
-}
-.foot-links { display: flex; gap: 1.5rem; }
-.foot-links a {
-  font-size: 0.72rem; color: rgba(255,255,255,0.3);
-  letter-spacing: 0.08em; text-transform: uppercase;
-  transition: color 0.2s;
-}
-.foot-links a:hover { color: rgba(255,255,255,0.7); }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 900px) {
-  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .interests-grid { grid-template-columns: 1fr 1fr; }
-  .teach-grid { grid-template-columns: 1fr; }
-  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-}
-@media (max-width: 768px) {
-  nav { padding: 0 1.5rem; }
-  .nav-menu { display: none; }
-  .nav-menu.open {
-    display: flex; flex-direction: column;
-    position: fixed; top: 62px; left: 0; right: 0; z-index: 199;
-    background: var(--paper); border-bottom: 1px solid var(--rule);
-    padding: 1.5rem 2rem; gap: 1.2rem;
-  }
-  .nav-toggle { display: flex; }
-  #hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-l { padding: 4rem 1.5rem 3rem; }
-  .hero-r { padding: 3rem 1.5rem 4rem; }
-  .wrap { padding: 0 1.5rem; }
-  .edu-item { grid-template-columns: 1fr; gap: 0.5rem; }
-  .skills-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .proj-grid { grid-template-columns: 1fr; }
-  .honor-item { grid-template-columns: 56px 1fr; gap: 1rem; }
-  footer { padding: 1.5rem; }
-}
-@media (max-width: 520px) {
-  .interests-grid { grid-template-columns: 1fr; }
-  .skills-grid { grid-template-columns: 1fr; }
-  .hero-btns { flex-direction: column; }
-  .rexp-header { grid-template-columns: 1fr; }
-}
-
-/* ── FADE ANIMATION ── */
-.fade { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
-.fade.in { opacity: 1; transform: none; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academic website of Shamas Liaqat, Marie Skłodowska-Curie Doctoral Researcher at the University of Pisa, working on the techno-economic assessment of alternative feeds in livestock production systems.">
+  <meta name="theme-color" content="#f7f8f5">
+  <title>Shamas Liaqat | Agricultural Economist & Doctoral Researcher</title>
+  <style>
+    :root {
+      --ink: #182522;
+      --muted: #62716c;
+      --green: #245b4a;
+      --green-dark: #173f34;
+      --sage: #e9f0eb;
+      --paper: #fbfcfa;
+      --line: #dce5de;
+      --gold: #bd9655;
+      --white: #fff;
+      --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--ink); background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.68;
+    }
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { width: min(var(--max), calc(100% - 44px)); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 20; background: rgba(251,252,250,.94);
+      backdrop-filter: blur(12px); border-bottom: 1px solid var(--line);
+    }
+    .nav { min-height: 72px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { font-weight: 750; letter-spacing: -.03em; color: var(--ink); font-size: 1.05rem; }
+    nav { display:flex; gap:22px; flex-wrap:wrap; }
+    nav a { color: #53635d; font-size: .88rem; font-weight: 600; }
+    .hero { padding: 88px 0 78px; background: linear-gradient(120deg, #f2f6f2 0%, #fbfcfa 68%); }
+    .hero-grid { display:grid; grid-template-columns: 1.55fr .75fr; gap:60px; align-items:center; }
+    .eyebrow { color: var(--green); text-transform:uppercase; letter-spacing:.13em; font-size:.75rem; font-weight:800; }
+    h1 { font-size: clamp(2.6rem, 6vw, 4.7rem); line-height:1.04; letter-spacing:-.055em; margin:16px 0 18px; max-width:760px; }
+    .hero-lead { font-size:1.18rem; color:#465650; max-width:700px; margin:0 0 26px; }
+    .role { font-weight:700; color:var(--green-dark); }
+    .actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:28px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; padding:11px 18px; border-radius:6px; font-weight:700; font-size:.9rem; border:1px solid var(--green); }
+    .btn.primary { background:var(--green); color:white; }
+    .btn.secondary { color:var(--green); background:transparent; }
+    .profile-card { background:white; border:1px solid var(--line); border-radius:14px; padding:28px; box-shadow:0 18px 50px rgba(27,58,45,.07); }
+    .monogram { width:76px; height:76px; border-radius:50%; background:var(--sage); color:var(--green); display:grid; place-items:center; font-size:1.5rem; font-weight:800; margin-bottom:20px; }
+    .profile-card h2 { font-size:1.05rem; margin:0 0 8px; }
+    .profile-card p { color:var(--muted); font-size:.91rem; margin:0; }
+    .profile-meta { border-top:1px solid var(--line); margin-top:20px; padding-top:17px; font-size:.86rem; color:var(--muted); }
+    section { padding:76px 0; border-bottom:1px solid var(--line); }
+    .section-head { max-width:700px; margin-bottom:34px; }
+    .section-head h2 { font-size:clamp(1.8rem,3.5vw,2.45rem); letter-spacing:-.04em; line-height:1.15; margin:8px 0 12px; }
+    .section-head p { color:var(--muted); margin:0; }
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:44px; }
+    .prose p { margin-top:0; color:#485851; }
+    .quote { border-left:3px solid var(--gold); padding:8px 0 8px 22px; color:#35463f; font-size:1.12rem; font-family:Georgia,serif; }
+    .feature { background:var(--green-dark); color:white; border-radius:12px; padding:30px; }
+    .feature .eyebrow { color:#c6d9cd; }
+    .feature h3 { font-size:1.5rem; line-height:1.25; margin:12px 0; letter-spacing:-.025em; }
+    .feature p { color:#dce9e1; margin-bottom:0; }
+    .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+    .tag { border:1px solid #d5e2d9; background:#f5f8f5; color:#426052; padding:5px 10px; border-radius:30px; font-size:.78rem; font-weight:650; }
+    .timeline { border-left:1px solid #cbd9d0; margin-left:7px; padding-left:25px; }
+    .item { position:relative; padding:0 0 28px; }
+    .item:last-child { padding-bottom:0; }
+    .item:before { content:""; position:absolute; left:-31px; top:8px; width:11px; height:11px; border-radius:50%; background:var(--green); border:3px solid var(--paper); box-shadow:0 0 0 1px #a9c0b2; }
+    .item h3 { margin:0 0 3px; font-size:1.08rem; }
+    .item .meta { color:var(--green); font-size:.86rem; font-weight:700; }
+    .item p { color:var(--muted); margin:7px 0 0; font-size:.94rem; }
+    .cards { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+    .card { background:white; border:1px solid var(--line); border-radius:10px; padding:23px; }
+    .card h3 { margin:0 0 8px; font-size:1.04rem; }
+    .card p { color:var(--muted); margin:0 0 14px; font-size:.92rem; }
+    .card .small-link { font-size:.87rem; font-weight:700; }
+    .skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .skill-box { background:#f1f5f1; border-radius:10px; padding:22px; }
+    .skill-box h3 { font-size:1rem; margin:0 0 8px; }
+    .skill-box p { margin:0; color:var(--muted); font-size:.9rem; }
+    .note { color:var(--muted); font-size:.84rem; margin-top:18px; }
+    .education-list { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .education { border:1px solid var(--line); border-radius:10px; padding:22px; background:white; }
+    .education h3 { margin:0 0 5px; font-size:1rem; }
+    .education p { margin:0; color:var(--muted); font-size:.9rem; }
+    .award { display:inline-block; margin-top:12px; color:#755a2e; background:#f7f1e7; padding:4px 9px; border-radius:4px; font-size:.78rem; font-weight:700; }
+    .contact { background:#edf3ee; }
+    .contact-inner { display:flex; justify-content:space-between; align-items:center; gap:30px; }
+    .contact-inner h2 { margin:8px 0; font-size:2rem; letter-spacing:-.04em; }
+    .contact-inner p { color:var(--muted); max-width:580px; margin:0; }
+    footer { padding:25px 0; color:#77847e; font-size:.82rem; }
+    .footer-row { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    @media (max-width:760px) {
+      .nav { align-items:flex-start; padding:17px 0; flex-direction:column; gap:10px; }
+      nav { gap:13px; }
+      .hero { padding:60px 0; }
+      .hero-grid,.two-col { grid-template-columns:1fr; gap:28px; }
+      .profile-card { max-width:440px; }
+      section { padding:58px 0; }
+      .cards,.skills-grid,.education-list { grid-template-columns:1fr; }
+      .contact-inner { align-items:flex-start; flex-direction:column; }
+    }
+  </style>
 </head>
 <body>
-
-<!-- ── NAV ── -->
-<nav>
-  <span class="nav-brand">Shamas Liaqat</span>
-  <ul class="nav-menu" id="navMenu">
-    <li><a href="#about">About</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#research-exp">Experience</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- ── HERO ── -->
-<section id="hero">
-  <div class="hero-l">
-    <div class="hero-photo">
-      <img src="images/1735743565157.jpeg" alt="Shamas Liaqat">
-    </div>
-    <h1 class="hero-name">Shamas<br>Liaqat</h1>
-    <p class="hero-subtitle">MSc Agricultural Economics &nbsp;·&nbsp; Lecturer &nbsp;·&nbsp; Researcher</p>
-    <p class="hero-desc">I apply causal inference, econometrics, and modern data tools to questions of agricultural productivity, rural welfare, and development policy — bridging rigorous academic research with practical analytical work.</p>
-    <div class="hero-btns">
-      <a href="#research" class="btn-w">View Research</a>
-      <a href="#contact" class="btn-ol">Get in Touch</a>
-    </div>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home">Shamas Liaqat</a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a><a href="#research">Research</a><a href="#experience">Experience</a>
+      <a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </nav>
   </div>
-  <div class="hero-r">
-    <div class="hero-fact">
-      <div class="fact-val">3.78 / 4.0</div>
-      <div class="fact-lbl">MSc CGPA — University of Agriculture, Faisalabad</div>
-      <div class="fact-sub">Consistent academic excellence across postgraduate study</div>
-    </div>
-    <div class="hero-fact">
-      <div class="fact-val">Bronze Medal</div>
-      <div class="fact-lbl">BSc Agriculture &amp; Resource Economics — Ranked 3rd / 85</div>
-      <div class="fact-sub">University of Agriculture, Faisalabad</div>
-    </div>
-    <div class="hero-fact">
-      <div class="fact-val">Scopus</div>
-      <div class="fact-lbl">Peer-reviewed co-authored publication (2022)</div>
-      <div class="fact-sub">Pakistan Journal of Agricultural Research</div>
-    </div>
-    <div class="hero-fact">
-      <div class="fact-val">Stanford</div>
-      <div class="fact-lbl">Code in Place Section Leader — 2025</div>
-      <div class="fact-sub">Selected to lead international programming sessions globally</div>
-    </div>
-  </div>
-</section>
+</header>
 
-<!-- ── ABOUT ── -->
-<section id="about" class="section">
-  <div class="wrap">
-    <span class="sec-kicker fade">About</span>
-    <h2 class="sec-title fade">Who I Am</h2>
-    <div class="about-grid">
-      <div class="about-body fade">
-        <p>I am an agricultural and resource economist with a strong foundation in quantitative research methods, developed through academic training, primary fieldwork, and applied data analysis. My intellectual interest lies in understanding how economic decisions at the household level — farming choices, off-farm employment, resource allocation — connect to broader questions of rural welfare, food security, and development policy.</p>
-        <p>My MSc thesis gave me hands-on experience with causal inference methodology, designing and administering surveys, and working through the full data pipeline from collection to analysis. That experience shaped how I think about empirical research: careful identification of causal mechanisms, clean data management, and findings that are honest about their scope and limitations.</p>
-        <p>I am currently a Lecturer in Economics at the Higher Education Department, Punjab — a position that keeps me grounded in the communicative and pedagogical side of the discipline. At the same time, I am actively pursuing doctoral opportunities in agricultural, environmental, or development economics, and I remain open to remote research collaborations and data analysis engagements where I can contribute meaningful quantitative work.</p>
-      </div>
-      <div class="about-aside fade">
-        <div class="aside-block">
-          <div class="aside-lbl">Current Role</div>
-          <div class="aside-val">Lecturer in Economics<br>Higher Education Department, Punjab</div>
-        </div>
-        <div class="aside-block">
-          <div class="aside-lbl">Research Focus</div>
-          <div class="aside-val">Causal Inference · Agricultural Policy · Rural Household Welfare · Development Economics</div>
-        </div>
-        <div class="aside-block">
-          <div class="aside-lbl">Methods</div>
-          <div class="aside-val">PSM · Panel Data · Regression Analysis · Survey Design · Python · Stata</div>
-        </div>
-        <div class="aside-block">
-          <div class="aside-lbl">Languages</div>
-          <div class="aside-val">English (Fluent) · Urdu (Native) · German (Beginner)</div>
-        </div>
-        <div class="aside-block">
-          <div class="aside-lbl">Location</div>
-          <div class="aside-val">Narowal, Punjab, Pakistan<br>Open to remote work</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── EDUCATION ── -->
-<section id="education" class="section">
-  <div class="wrap">
-    <span class="sec-kicker fade">Education</span>
-    <h2 class="sec-title fade">Academic Background</h2>
-    <div class="edu-list">
-
-      <div class="edu-item fade">
-        <div class="edu-years">2021 – 2023</div>
-        <div>
-          <div class="edu-degree">MSc (Hons) Agricultural Economics</div>
-          <div class="edu-inst">University of Agriculture, Faisalabad, Pakistan</div>
-          <span class="edu-cgpa">CGPA 3.78 / 4.0</span>
-          <div class="edu-details">
-            <p><strong>Thesis:</strong> "Impact of Non-farm Work on Agricultural Productivity and Household Income of Farmers"</p>
-            <p style="margin-top:0.5rem;">Applied <strong>Propensity Score Matching (PSM)</strong> for causal inference analysis on primary survey data collected from <strong>150 rural households</strong> in Pakistan. Managed the complete data pipeline — survey design, field administration, data cleaning, and statistical analysis in Stata and SPSS. The thesis investigates how participation in off-farm employment causally affects on-farm productivity and household income, contributing to debates on agricultural diversification and rural livelihood strategies.</p>
-            <p style="margin-top:0.5rem;"><strong>Relevant modules:</strong> Econometrics, Mathematical Economics, Statistical Methods for Economics, Microeconomics, International Trade, Research Methods in Social Sciences</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="edu-item fade">
-        <div class="edu-years">2017 – 2021</div>
-        <div>
-          <div class="edu-degree">BSc (Hons) Agriculture &amp; Resource Economics</div>
-          <div class="edu-inst">University of Agriculture, Faisalabad, Pakistan</div>
-          <span class="edu-cgpa">CGPA 3.70 / 4.0</span>
-          <span class="edu-badge">🥉 Bronze Medal — Ranked 3rd / 85</span>
-          <div class="edu-details">
-            <p>Graduated with distinction, ranked third among 85 students across the full four-year programme. Built a strong foundation in applied economics, resource allocation, and quantitative methods, with particular depth in production economics and environmental resource management.</p>
-            <p style="margin-top:0.5rem;"><strong>Relevant modules:</strong> Production Economics, Environmental Economics, Agricultural Policy Analysis, Microeconomics, Macroeconomics, Farm Management, Natural Resource Economics</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── RESEARCH ── -->
-<section id="research" class="section">
-  <div class="wrap">
-    <span class="sec-kicker fade">Research</span>
-    <h2 class="sec-title fade">Publications &amp; Research Interests</h2>
-
-    <div class="fade">
-      <div class="pub-entry">
-        <div class="pub-yr">2022</div>
-        <div>
-          <div class="pub-t">Developing Evidence-Based Policy and Programs in Mountainous Specific Agriculture in Gilgit-Baltistan and Chitral Regions of Pakistan</div>
-          <div class="pub-auth">Hussain, A., Khan, S., &amp; Liaqat, S.</div>
-          <div class="pub-jour">Pakistan Journal of Agricultural Research, 35(1), 181–196</div>
-          <div class="pub-chips">
-            <span class="chip">Scopus-indexed</span>
-            <span class="chip">Agricultural Policy</span>
-            <span class="chip">Mountain Agriculture</span>
-            <span class="chip">Evidence-based Policy</span>
-            <a href="https://doi.org/10.17582/journal.pjar/2022/35.1.181.196" target="_blank" class="chip-ink">DOI →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pub-entry">
-        <div class="pub-yr">2023</div>
-        <div>
-          <div class="pub-t">Impact of Non-farm Work on Agricultural Productivity and Household Income of Farmers <em style="font-size:0.88rem;font-weight:400;color:var(--muted)">(MSc Thesis)</em></div>
-          <div class="pub-auth">Liaqat, S.</div>
-          <div class="pub-jour">University of Agriculture, Faisalabad · Primary field research · Supervised thesis</div>
-          <div class="pub-chips">
-            <span class="chip">Propensity Score Matching</span>
-            <span class="chip">Causal Inference</span>
-            <span class="chip">Rural Households</span>
-            <span class="chip">N = 150</span>
-            <span class="chip">Stata / SPSS</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="fade">
-      <h3 style="font-family:'Lora',serif;font-size:1.15rem;font-weight:600;color:var(--ink);margin:3rem 0 0.5rem;">Research Interests</h3>
-      <div class="divider"></div>
-      <div class="interests-grid">
-        <div class="int-cell">
-          <h4>Climate Change &amp; Agriculture</h4>
-          <p>How climate variability affects crop yields, farmer adaptation strategies, and food system resilience in developing country contexts.</p>
-        </div>
-        <div class="int-cell">
-          <h4>Rural Poverty &amp; Household Welfare</h4>
-          <p>Causal evaluation of non-farm income, social programs, and policy interventions on smallholder and rural household welfare.</p>
-        </div>
-        <div class="int-cell">
-          <h4>Food Security &amp; Policy Analysis</h4>
-          <p>Supply chains, price volatility, and governance structures that determine food access and nutritional outcomes in rural regions.</p>
-        </div>
-        <div class="int-cell">
-          <h4>Land Use &amp; Environmental Economics</h4>
-          <p>Land tenure, resource allocation, and the economic valuation of ecosystem services within agricultural landscapes.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── RESEARCH EXPERIENCE ── -->
-<section id="research-exp" class="section">
-  <div class="wrap">
-    <span class="sec-kicker fade">Research Experience</span>
-    <h2 class="sec-title fade">Field &amp; Analytical Research Work</h2>
-
-    <div class="rexp-item fade">
-      <div class="rexp-header">
-        <div>
-          <div class="rexp-role">Research Intern</div>
-          <div class="rexp-org">National Agriculture Research Centre (NARC) — Islamabad, Pakistan</div>
-        </div>
-        <div class="rexp-period">Feb 2021 – Jun 2021</div>
-      </div>
-      <div class="rexp-body">
-        <p>Worked within a research team at Pakistan's premier agricultural research institution, contributing to a study on evidence-based policy development for mountainous agriculture in the Gilgit-Baltistan and Chitral regions. This internship provided comprehensive exposure to the complete research process — from initial design through fieldwork, analysis, and academic writing.</p>
-        <ul>
-          <li><strong>Survey design and administration:</strong> Designed and administered a structured primary survey with over 120 rural farming households, covering agricultural practices, income sources, resource use, and livelihood strategies.</li>
-          <li><strong>Data management:</strong> Managed the full data pipeline — field collection, data entry, cleaning, validation, and preparation for analysis — ensuring consistency and analytical integrity.</li>
-          <li><strong>Quantitative analysis:</strong> Applied econometric and statistical methods using <strong>Stata</strong> and <strong>SPSS</strong> to analyse household-level behavioural and economic data.</li>
-          <li><strong>Literature review:</strong> Conducted a systematic review of 50+ peer-reviewed studies on mountain-specific agricultural policy, identifying gaps and framing the study's contribution.</li>
-          <li><strong>Publication:</strong> Co-authored a peer-reviewed article subsequently published in a <strong>Scopus-indexed journal</strong> (Pakistan Journal of Agricultural Research, 2022).</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="rexp-item fade">
-      <div class="rexp-header">
-        <div>
-          <div class="rexp-role">Independent Research — MSc Thesis</div>
-          <div class="rexp-org">University of Agriculture, Faisalabad</div>
-        </div>
-        <div class="rexp-period">2021 – 2023</div>
-      </div>
-      <div class="rexp-body">
-        <p>Independently designed, executed, and analysed a primary research project examining the causal relationship between non-farm employment and agricultural outcomes at the household level in rural Pakistan.</p>
-        <ul>
-          <li><strong>Research design:</strong> Formulated the research question, identified the causal identification strategy, and designed the sampling framework for a primary household survey.</li>
-          <li><strong>Primary data collection:</strong> Administered structured interviews with <strong>150 rural farming households</strong>, covering agricultural productivity, off-farm employment, income sources, and household characteristics.</li>
-          <li><strong>Causal inference:</strong> Applied <strong>Propensity Score Matching (PSM)</strong> to control for selection bias and estimate the causal effect of non-farm work participation on farm productivity and household income.</li>
-          <li><strong>Analysis tools:</strong> Statistical analysis conducted in Stata and SPSS; data management and validation performed throughout the pipeline.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="rexp-item fade">
-      <div class="rexp-header">
-        <div>
-          <div class="rexp-role">Professional Development — Research Community Engagement</div>
-          <div class="rexp-org">International &amp; National Institutions</div>
-        </div>
-        <div class="rexp-period">2022 – 2025</div>
-      </div>
-      <div class="rexp-body">
-        <p>Actively engaged with the international research and policy community through training programmes and professional development events:</p>
-        <ul>
-          <li><strong>World Bank ESF in Practice Training</strong> (Lahore, Oct 2022) — Environmental and Social Framework training for academic institutions, covering policy evaluation standards used in World Bank-funded research.</li>
-          <li><strong>AERE–GSE Professional Development Panel</strong> (2025) — Association of Environmental &amp; Resource Economists panel on novel datasets and contemporary empirical skillsets in environmental and resource economics.</li>
-          <li>Participated in webinars on <strong>behavioural approaches to climate-economy interactions</strong> and evidence-based policy design.</li>
-          <li><strong>NASA Space Apps Challenge 2024</strong> — Global data-intensive problem-solving challenge with 93,000+ participants across 160+ countries.</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── TEACHING ── -->
-<section id="teaching" class="section">
-  <div class="wrap">
-    <span class="sec-kicker fade">Teaching</span>
-    <h2 class="sec-title fade">Teaching Experience</h2>
-    <div class="teach-grid">
-
-      <div class="teach-card fade">
-        <div class="teach-period">January 2023 — Present</div>
-        <div class="teach-role">Lecturer in Economics</div>
-        <div class="teach-org">Higher Education Department, Punjab, Pakistan</div>
-        <div class="teach-divider"></div>
-        <div class="teach-body">
-          <p>A permanent government position within Punjab's Higher Education Department, responsible for undergraduate economics instruction and curriculum development at the collegiate level.</p>
-          <ul>
-            <li><strong>Production Economics:</strong> Theory of the firm, cost structures, input-output relationships, and profit maximisation under different market conditions — directly connected to agricultural and resource economics contexts.</li>
-            <li><strong>Applied Microeconomics:</strong> Consumer and producer theory, incentive structures, market behaviour, and decision-making under uncertainty.</li>
-            <li><strong>Quantitative Reasoning:</strong> Integrates analytical and mathematical reasoning into economic problem-solving through activity-based and applied learning approaches.</li>
-            <li>Develops course materials that connect theoretical frameworks to real-world economic and policy contexts relevant to students in Pakistan.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="teach-card fade">
-        <div class="teach-period">April 2025 — June 2025</div>
-        <div class="teach-role">Section Leader</div>
-        <div class="teach-org">Stanford University: Code in Place — Remote</div>
-        <div class="teach-divider"></div>
-        <div class="teach-body">
-          <p>Selected from a global applicant pool to serve as a Section Leader for Stanford University's Code in Place programme — a free, publicly accessible computer science course taught using Stanford's CS106A curriculum.</p>
-          <ul>
-            <li>Facilitated weekly live programming sessions for <strong>20+ international students</strong> from diverse academic and cultural backgrounds.</li>
-            <li>Taught <strong>Python fundamentals</strong>, problem decomposition, and logical reasoning, adapting explanations to varying levels of prior experience.</li>
-            <li>Provided individual mentoring and feedback, fostering an inclusive and supportive learning environment across time zones.</li>
-            <li>Demonstrated capacity to communicate complex technical content clearly to non-specialist audiences — a skill directly transferable to research teaching and supervision contexts.</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── SKILLS ── -->
-<section id="skills" class="section">
-  <div class="wrap">
-    <span class="sec-kicker fade">Skills &amp; Tools</span>
-    <h2 class="sec-title fade">Competencies</h2>
-    <div class="skills-grid fade">
-
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
       <div>
-        <div class="skill-cat-title">Economics &amp; Research Methods</div>
-        <div class="skill-entries">
-          <div class="skill-entry">Causal Inference — PSM, DiD, IV</div>
-          <div class="skill-entry">Regression &amp; Panel Data Analysis</div>
-          <div class="skill-entry">Survey Design &amp; Field Administration</div>
-          <div class="skill-entry">Primary Data Collection &amp; Management</div>
-          <div class="skill-entry">Policy Evaluation Frameworks</div>
-          <div class="skill-entry">Systematic Literature Review</div>
-          <div class="skill-entry">Stata</div>
-          <div class="skill-entry">SPSS</div>
+        <div class="eyebrow">Agricultural Economics · Sustainable Livestock</div>
+        <h1>Shamas Liaqat</h1>
+        <p class="hero-lead"><span class="role">Marie Skłodowska-Curie Doctoral Researcher (DC12)</span> at the University of Pisa, Italy. I work on the techno-economic assessment of alternative feeds in livestock production systems.</p>
+        <p class="hero-lead" style="font-size:1rem">My research connects economic analysis and quantitative methods with practical questions about agricultural productivity, farmers’ decisions and environmental sustainability.</p>
+        <div class="actions">
+          <a class="btn primary" href="#research">Explore my research</a>
+          <a class="btn secondary" href="https://github.com/Shamas245" target="_blank" rel="noopener">GitHub portfolio ↗</a>
         </div>
       </div>
+      <aside class="profile-card">
+        <div class="monogram" aria-label="SL initials">SL</div>
+        <h2>Doctoral Researcher · FEATURE Project</h2>
+        <p>Department of Agricultural, Food and Agro-environmental Sciences<br>University of Pisa, Italy</p>
+        <div class="profile-meta">
+          <strong>Research focus</strong><br>
+          Techno-economic assessment · Alternative feeds · Livestock systems
+        </div>
+        <div class="profile-meta">
+          <strong>Academic background</strong><br>
+          MSc (Hons.) Agricultural Economics
+        </div>
+      </aside>
+    </div>
+  </section>
 
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">About me</div>
+        <h2>An agricultural economist working across economics, data and sustainability.</h2>
+        <p>My academic path has moved from household-level agricultural research towards the economic assessment of sustainable livestock production.</p>
+      </div>
+      <div class="two-col">
+        <div class="prose">
+          <p>I am an agricultural economist with an interdisciplinary research background, combining economic analysis, quantitative methods and computational tools to understand agricultural and sustainability challenges. I am currently an MSCA Doctoral Researcher at the University of Pisa, where I am developing my research expertise in the techno-economic assessment of alternative feeds in livestock production systems.</p>
+          <p>I hold an MSc (Hons.) in Agricultural Economics and a BSc (Hons.) in Agricultural and Resource Economics from the University of Agriculture Faisalabad, Pakistan. Before beginning my doctoral research, I worked as a Lecturer in Economics in Punjab, Pakistan.</p>
+          <p>My broader interests include farmers’ economic decisions, agricultural productivity, rural livelihoods, food systems and environmental sustainability.</p>
+        </div>
+        <div>
+          <div class="quote">“I believe meaningful research should go beyond academic knowledge and contribute to solving real-world challenges, particularly by improving farmers’ livelihoods, strengthening food security and protecting the environment.”</div>
+          <div class="tag-row">
+            <span class="tag">Agricultural economics</span><span class="tag">Applied research</span>
+            <span class="tag">Quantitative methods</span><span class="tag">Python</span>
+            <span class="tag">Sustainable food systems</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Current research</div>
+        <h2>FEATURE · Future Feeds for Sustainability in European Livestock Production</h2>
+        <p>Marie Skłodowska-Curie Actions Doctoral Network · Doctoral Candidate 12 · University of Pisa</p>
+      </div>
+      <div class="feature">
+        <div class="eyebrow">DC12 research topic</div>
+        <h3>Extended Techno-economic Assessment of Alternative Feeds in Livestock Production Systems</h3>
+        <p>My doctoral research focuses on developing techno-economic assessment (TEA) models and integrating environmental impact evidence to evaluate the economic feasibility of alternative feeds across livestock production systems. I will also compare scenarios for their wider adoption.</p>
+      </div>
+      <div class="two-col" style="margin-top:30px">
+        <div class="prose">
+          <h3>Research questions that motivate me</h3>
+          <p>How do alternative feed ingredients affect the costs and economic performance of livestock systems? Under what conditions can they be viable options for farmers and the wider feed chain? How can economic and environmental evidence inform decisions about their adoption?</p>
+        </div>
+        <div class="prose">
+          <h3>Research interests</h3>
+          <p>Agricultural and environmental economics; techno-economic assessment; livestock production economics; alternative feed resources; farmer decision-making; agricultural productivity; and sustainable food systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Research & professional experience</div>
+        <h2>Research grounded in field experience and teaching.</h2>
+      </div>
+      <div class="timeline">
+        <div class="item">
+          <h3>Marie Skłodowska-Curie Doctoral Researcher (DC12)</h3>
+          <div class="meta">University of Pisa, Italy · FEATURE Doctoral Network · 2026–present</div>
+          <p>Doctoral research on the extended techno-economic assessment of alternative feeds in livestock production systems.</p>
+        </div>
+        <div class="item">
+          <h3>Lecturer in Economics</h3>
+          <div class="meta">Higher Education Department, Government of Punjab, Pakistan · 2023–2026</div>
+          <p>Taught economics at college level, including microeconomics, macroeconomics and production economics, and supported student learning and academic activities.</p>
+        </div>
+        <div class="item">
+          <h3>Research Intern</h3>
+          <div class="meta">National Agricultural Research Centre (NARC) · 2021</div>
+          <p>Contributed to rural and agricultural research, including field survey work with more than 120 rural households, data management and literature review.</p>
+        </div>
+        <div class="item">
+          <h3>Stanford Code in Place · Section Leader</h3>
+          <div class="meta">2025</div>
+          <p>Supported learners in an introductory programming course, strengthening my experience in explaining computational concepts and guiding practical learning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Selected projects & skills</div>
+        <h2>Economics-led research supported by computational tools.</h2>
+        <p>Selected independent projects and learning work. Project descriptions are deliberately concise; code and documentation are available through GitHub.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Agricultural Structural Transformation, 1961–2023</h3>
+          <p>Exploratory analysis of long-run agricultural and structural transformation indicators using World Bank data and Python.</p>
+          <a class="small-link" href="https://github.com/Shamas245" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+        <article class="card">
+          <h3>Card–Krueger (1994) Difference-in-Differences Replication</h3>
+          <p>An applied econometrics replication project exploring a well-known empirical study and its difference-in-differences approach.</p>
+          <a class="small-link" href="https://github.com/Shamas245" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+        <article class="card">
+          <h3>Rainfall and Agricultural Outcomes: Nigeria</h3>
+          <p>Replication work based on Amare et al. (2018), using Nigeria LSMS-ISA data to examine rainfall-related empirical analysis.</p>
+          <a class="small-link" href="https://github.com/Shamas245" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+        <article class="card">
+          <h3>Python for Economics</h3>
+          <p>Teaching-oriented notebooks and exercises introducing Python for economics and data analysis.</p>
+          <a class="small-link" href="https://github.com/Shamas245" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+      </div>
+      <div style="margin-top:34px">
+        <h3 style="margin-bottom:16px">Methods & tools</h3>
+        <div class="skills-grid">
+          <div class="skill-box"><h3>Economic research</h3><p>Agricultural economics, applied microeconomics, household survey analysis, production economics and literature review.</p></div>
+          <div class="skill-box"><h3>Data & quantitative tools</h3><p>Stata, SPSS and Python for data management, analysis, visualisation and research workflows.</p></div>
+          <div class="skill-box"><h3>Interdisciplinary learning</h3><p>Developing experience at the intersection of techno-economic assessment, environmental evidence and computational approaches.</p></div>
+        </div>
+        <p class="note">This section reflects areas of experience and ongoing development; it is not intended as a claim of expert-level proficiency in every method or tool.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Education & recognition</div>
+        <h2>Academic foundation</h2>
+      </div>
+      <div class="education-list">
+        <div class="education">
+          <h3>MSc (Hons.) Agricultural Economics</h3>
+          <p>University of Agriculture Faisalabad, Pakistan · 2021–2023<br>CGPA: 3.78/4.00</p>
+          <p style="margin-top:12px"><strong>Thesis:</strong> Impact of Non-farm Work on Agricultural Productivity and Household Income of Farmers, Sialkot District.</p>
+        </div>
+        <div class="education">
+          <h3>BSc (Hons.) Agriculture and Resource Economics</h3>
+          <p>University of Agriculture Faisalabad, Pakistan · 2017–2021<br>CGPA: 3.70/4.00</p>
+          <span class="award">Bronze Medal · 3rd of 85</span>
+        </div>
+      </div>
+      <div style="margin-top:30px" class="prose">
+        <h3>Publication</h3>
+        <p>Co-authored research article published in the <em>Pakistan Journal of Agricultural Research</em>, 35(1), 181–196 (2022).</p>
+        <p class="note">The full article title and DOI can be added once the exact bibliographic details are confirmed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-inner">
       <div>
-        <div class="skill-cat-title">Data &amp; Programming</div>
-        <div class="skill-entries">
-          <div class="skill-entry">Python — Pandas, NumPy, Statsmodels</div>
-          <div class="skill-entry">Scikit-learn &amp; Machine Learning</div>
-          <div class="skill-entry">Linearmodels (Panel Econometrics)</div>
-          <div class="skill-entry">Data Visualization</div>
-          <div class="skill-entry">Reproducible Research Workflows</div>
-          <div class="skill-entry">Household &amp; Cross-sectional Datasets</div>
-          <div class="skill-entry">World Bank &amp; Open Data Sources</div>
-        </div>
+        <div class="eyebrow">Contact & profiles</div>
+        <h2>Let’s connect.</h2>
+        <p>For academic exchange, research collaboration or questions about my work, you can find me through the profiles below.</p>
       </div>
-
-      <div>
-        <div class="skill-cat-title">Domain Knowledge</div>
-        <div class="skill-entries">
-          <div class="skill-entry">Agricultural Economics</div>
-          <div class="skill-entry">Production Economics</div>
-          <div class="skill-entry">Environmental &amp; Resource Economics</div>
-          <div class="skill-entry">Development Economics</div>
-          <div class="skill-entry">Rural Household Behaviour</div>
-          <div class="skill-entry">Food &amp; Climate Policy</div>
-          <div class="skill-entry">Agricultural Policy Analysis</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── PROJECTS ── -->
-<section id="projects" class="section">
-  <div class="wrap">
-    <span class="sec-kicker fade">Projects</span>
-    <h2 class="sec-title fade">Selected Work</h2>
-
-    <div class="fade">
-      <div class="proj-cat-label">Research &amp; Data Projects</div>
-      <div class="proj-grid">
-        <div class="proj-card">
-          <div class="proj-name">Agricultural Structural Transformation Analysis</div>
-          <div class="proj-desc">
-            A data-driven investigation of agricultural structural transformation patterns across developing economies using <strong>World Bank indicators spanning 1961 to 2023</strong>. The project examines long-run shifts in agricultural employment share, output contribution, and labour productivity — key processes in the structural transformation literature that connect agricultural development to broader economic growth. Analysis is conducted entirely in Python, with reproducible data pipelines built using Pandas and visualisation libraries. The project demonstrates ability to work with large longitudinal datasets and translate development economics theory into applied empirical analysis.
-          </div>
-          <div class="proj-footer">
-            <span class="proj-stack">Python · Pandas · World Bank API · Data Visualization</span>
-            <a href="https://github.com/Shamas245/agricultural-structural-transformation" target="_blank" class="proj-link">GitHub →</a>
-          </div>
-        </div>
-        <div class="proj-card">
-          <div class="proj-name">DeepAgro — Agricultural AI Recommendation System</div>
-          <div class="proj-desc">
-            A multi-agent AI system designed to deliver intelligent, context-aware agricultural recommendations by integrating farm condition data, environmental variables, and economic factors. Built using <strong>CAMEL AI and Google Generative AI</strong>, DeepAgro features specialised agents for user interaction, data analysis, and action planning — demonstrating how modern AI architectures can be applied to real agricultural decision-making contexts. The project reflects an interest in how computational tools can support smallholder farmers in resource-constrained settings, connecting technical AI development to the domain concerns of agricultural economics research.
-          </div>
-          <div class="proj-footer">
-            <span class="proj-stack">Python · CAMEL AI · Google AI · Multi-agent Systems</span>
-            <a href="https://github.com/Shamas245/DeepAgro" target="_blank" class="proj-link">GitHub →</a>
-          </div>
-        </div>
+      <div class="actions">
+        <a class="btn primary" href="https://linkedin.com/in/shamasliaqat" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn secondary" href="https://github.com/Shamas245" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </div>
-
-    <div class="fade">
-      <div class="proj-cat-label">Educational &amp; Applied Tools</div>
-      <div class="proj-grid">
-        <div class="proj-card">
-          <div class="proj-name">Basic Python for Economics</div>
-          <div class="proj-desc">
-            An open-access <strong>beginner notebook series</strong> designed to help economics students and professionals learn Python through practical, real-world economic examples. Each notebook introduces a Python concept — data structures, loops, functions, visualisation — through an economic lens: demand curves, production functions, price indices, and simple regression. Developed from direct classroom experience as a Lecturer, the series addresses a genuine gap: most Python resources are written for computer science audiences, not economists. Freely available on GitHub and designed to be taught or self-studied without prior programming experience.
-          </div>
-          <div class="proj-footer">
-            <span class="proj-stack">Python · Jupyter Notebooks · Open Access</span>
-            <a href="https://github.com/Shamas245/Basic_Python_for_Economics" target="_blank" class="proj-link">GitHub →</a>
-          </div>
-        </div>
-        <div class="proj-card">
-          <div class="proj-name">Meeting Summarizer</div>
-          <div class="proj-desc">
-            A <strong>Streamlit-based productivity application</strong> that processes audio recordings, video files, or raw transcripts to automatically generate structured meeting summaries, action item lists, and key decision logs. Built to address a real workflow problem — the time cost of manually reviewing and summarising meeting content — the tool uses NLP pipelines to extract and organise information into professional output formats. Demonstrates applied software development skills, ability to build user-facing tools with Python, and experience deploying lightweight web applications with Streamlit. Practical for research teams, organisations, and remote work contexts.
-          </div>
-          <div class="proj-footer">
-            <span class="proj-stack">Python · Streamlit · NLP · Audio Processing</span>
-            <a href="https://github.com/Shamas245/meeting_summarizer" target="_blank" class="proj-link">GitHub →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── HONORS ── -->
-<section id="honors" class="section">
-  <div class="wrap">
-    <span class="sec-kicker fade">Recognition</span>
-    <h2 class="sec-title fade">Honors &amp; Awards</h2>
-    <ul class="honors-list fade">
-      <li class="honor-item">
-        <div class="honor-yr">2017–21</div>
-        <div>
-          <div class="honor-title">Bronze Medal — Ranked 3rd out of 85 Students</div>
-          <div class="honor-sub">BSc (Hons) Agriculture &amp; Resource Economics · University of Agriculture, Faisalabad</div>
-        </div>
-      </li>
-      <li class="honor-item">
-        <div class="honor-yr">2022</div>
-        <div>
-          <div class="honor-title">Lecturer in Economics — Punjab Public Service Commission</div>
-          <div class="honor-sub">Permanent government appointment through competitive examination · Higher Education Department, Punjab</div>
-        </div>
-      </li>
-      <li class="honor-item">
-        <div class="honor-yr">2022</div>
-        <div>
-          <div class="honor-title">World Bank ESF in Practice Training</div>
-          <div class="honor-sub">Environmental &amp; Social Framework training for academic institutions · Lahore, Pakistan</div>
-        </div>
-      </li>
-      <li class="honor-item">
-        <div class="honor-yr">2024</div>
-        <div>
-          <div class="honor-title">NASA Space Apps Challenge</div>
-          <div class="honor-sub">Global participation — 93,000+ participants across 160+ countries</div>
-        </div>
-      </li>
-      <li class="honor-item">
-        <div class="honor-yr">2025</div>
-        <div>
-          <div class="honor-title">Section Leader — Stanford University: Code in Place</div>
-          <div class="honor-sub">Selected from a global applicant pool to lead international Python programming sessions</div>
-        </div>
-      </li>
-      <li class="honor-item">
-        <div class="honor-yr">2025</div>
-        <div>
-          <div class="honor-title">AERE–GSE Professional Development Panel</div>
-          <div class="honor-sub">Association of Environmental &amp; Resource Economists — Panel on novel datasets and contemporary empirical skillsets</div>
-        </div>
-      </li>
-      <li class="honor-item">
-        <div class="honor-yr">–</div>
-        <div>
-          <div class="honor-title">Harvard CS50x — All 9 Problem Sets Completed</div>
-          <div class="honor-sub">Harvard University's introduction to computer science — full course completion with perfect problem set record</div>
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- ── CONTACT ── -->
-<section id="contact" class="section">
-  <div class="wrap">
-    <span class="sec-kicker fade">Contact</span>
-    <h2 class="sec-title fade">Get in Touch</h2>
-    <div class="contact-grid">
-      <div class="fade">
-        <p class="contact-intro">I welcome inquiries related to PhD programme opportunities, research collaborations, research assistant positions, and remote data analysis or applied economic consulting engagements. Whether you are a prospective supervisor, a research institution, or an organisation seeking rigorous quantitative analysis — I am glad to discuss how I can contribute.</p>
-        <div class="contact-links">
-          <a href="mailto:shamasliaqat780@gmail.com" class="contact-row">
-            <span class="c-icon">✉</span>
-            shamasliaqat780@gmail.com
-          </a>
-          <a href="https://linkedin.com/in/shamasliaqat" target="_blank" class="contact-row">
-            <span class="c-icon">in</span>
-            linkedin.com/in/shamasliaqat
-          </a>
-          <a href="https://github.com/Shamas245" target="_blank" class="contact-row">
-            <span class="c-icon">gh</span>
-            github.com/Shamas245
-          </a>
-          <a href="tel:+923025157841" class="contact-row">
-            <span class="c-icon">☎</span>
-            +92-302-5157841
-          </a>
-        </div>
-      </div>
-      <div class="fade">
-        <div class="open-box">
-          <h4>Currently Open To</h4>
-          <div class="open-row"><span class="open-dot"></span><span>PhD opportunities in Agricultural, Environmental, or Development Economics</span></div>
-          <div class="open-row"><span class="open-dot"></span><span>Research assistant or data analyst roles at universities and policy institutes</span></div>
-          <div class="open-row"><span class="open-dot"></span><span>Remote consulting in econometrics and quantitative data analysis</span></div>
-          <div class="open-row"><span class="open-dot"></span><span>Collaborative research projects in agricultural or development economics</span></div>
-          <a href="https://calendly.com/shamasliaqat245/30min" target="_blank" class="cta">Schedule a Call</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── FOOTER ── -->
+  </section>
+</main>
 <footer>
-  <span class="foot-name">© 2026 Shamas Liaqat</span>
-  <div class="foot-links">
-    <a href="mailto:shamasliaqat780@gmail.com">Email</a>
-    <a href="https://linkedin.com/in/shamasliaqat" target="_blank">LinkedIn</a>
-    <a href="https://github.com/Shamas245" target="_blank">GitHub</a>
+  <div class="wrap footer-row">
+    <span>© <span id="year">2026</span> Shamas Liaqat</span>
+    <span>Agricultural Economics · University of Pisa</span>
   </div>
 </footer>
-
-<script>
-  // Mobile nav
-  const toggle = document.getElementById('navToggle');
-  const menu   = document.getElementById('navMenu');
-  toggle.addEventListener('click', () => menu.classList.toggle('open'));
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
-
-  // Scroll fade
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade').forEach(el => io.observe(el));
-</script>
 </body>
 </html>
